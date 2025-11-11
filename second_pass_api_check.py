@@ -5,6 +5,8 @@ from openai import OpenAI
 from tqdm import tqdm
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import time
+from dotenv import load_dotenv
+load_dotenv()
 
 OUTPUT_DIR = "second_pass_api_check"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
@@ -20,6 +22,19 @@ def read_jsonl(file_path: str) -> List[Dict[str, Any]]:
     with open(file_path, "r") as f:
         return [json.loads(line) for line in f]
 
+def read_json(file_path: str) -> List[Dict[str, Any]]:
+    with open(file_path, "r") as f:
+        data = json.load(f)
+    return [data[key] for key in data.keys()]
+    
+def load_data(file_path: str) -> List[Dict[str, Any]]:
+    if file_path.endswith(".jsonl"):
+        return read_jsonl(file_path)
+    elif file_path.endswith(".json"):
+        return read_json(file_path)
+    else:
+        raise ValueError(f"Unsupported file type: {file_path}")
+    
 def extract_code_block(content: str) -> str:
     try:
         if "```lean" in content:
@@ -32,6 +47,7 @@ def extract_code_block(content: str) -> str:
     
 def run_api_call(api_call: str, client: Any) -> str:
     try:
+        
         completion = client.chat.completions.create(
             model="gpt-5",
             messages=[
@@ -45,6 +61,7 @@ def run_api_call(api_call: str, client: Any) -> str:
             return content.strip()
         return ""
     except Exception as e:
+        print("ERROR: " + str(e))
         return f"API_ERROR: {e}"
 
 def construct_api_call(query: Dict[str, Any]) -> str:
@@ -82,6 +99,7 @@ def process_single_query(index: int, query: Dict[str, Any], client: Any) -> Dict
     return {"index": index, "updated_entry": updated_entry, "log_entry": log_entry}
 
 def main(data: List[Dict[str, Any]]):
+    max_workers = 15
     client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"), timeout=1000)
     results_by_index: Dict[int, Dict[str, Any]] = {}
     updated_by_index: Dict[int, Dict[str, Any]] = {}
@@ -89,7 +107,7 @@ def main(data: List[Dict[str, Any]]):
     stream_log_path = os.path.join(OUTPUT_DIR, "api_call_stream.jsonl")
     stream_cleaned_path = os.path.join(OUTPUT_DIR, "cleaned_stream.jsonl")
 
-    with ThreadPoolExecutor(max_workers=10) as executor, \
+    with ThreadPoolExecutor(max_workers=max_workers) as executor, \
          open(stream_log_path, "a") as stream_log_f, \
          open(stream_cleaned_path, "a") as stream_cleaned_f:
         futures = {
@@ -139,10 +157,15 @@ def main(data: List[Dict[str, Any]]):
     
     with open(os.path.join(OUTPUT_DIR, "cleaned_tao_analysis_baseline_wrapped_context.json"), "w") as f:
         json.dump(updated_data, f, indent=4)
+        
+    with open(os.path.join(OUTPUT_DIR, "human_readable_cleaned_tao_analysis_baseline_wrapped_context.txt"), "w") as f:
+        for example in updated_data:
+            f.write(example["chapter_name"] + ": " + example["FQN"] + "\n\n" + example["content"] + "\n\n")
+            f.write("-----------------------------------\n\n")
     
 
 if __name__ == "__main__":
-    data_path = os.path.join(os.path.dirname(__file__), "tao_analysis_baseline_wrapped_context.jsonl")
-    data = read_jsonl(data_path)
-    data = temp_combine_files(data)
+    data_path = "/Users/alextaylor/Desktop/lean_prover/output/verification_results.json"
+    data = load_data(data_path)
+    # data = temp_combine_files(data)
     main(data)

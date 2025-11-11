@@ -8,13 +8,14 @@ from typing import Set, Tuple, Optional, Dict, List
 import re
 
 JIXIA_EXECUTABLE = "/Users/alextaylor/dev/jixia/.lake/build/bin/jixia"
-BASELINE_PATH = "/Users/alextaylor/Desktop/lean_prover/tao_analysis_baseline.jsonl"
+BASELINE_PATH = "/Users/alextaylor/Desktop/lean_prover/baseline_data/tao_analysis_baseline.jsonl"
 
 WORKING_DIR = Path(os.getcwd()) / "processed_test_data"
-OUTPUT_DIR = Path(os.getcwd())
 
 DATA_DIR = "/Users/alextaylor/Desktop/lean_prover/processed_analysis"
 
+OUTPUT_DIR = Path(os.getcwd()) / "elab_resolution_results"
+os.makedirs(OUTPUT_DIR, exist_ok=True)
 CACHE_DIR = "/Users/alextaylor/Desktop/lean_prover/.cache"
 os.makedirs(CACHE_DIR, exist_ok=True)
 
@@ -22,7 +23,7 @@ ANALYSIS_BOOK_DIRECTORY = "/Users/alextaylor/Desktop/lean_prover/analysis/analys
 
 
 # Configurable recursion depth
-MAX_DEPTH = 3 
+MAX_DEPTH = -1 
 COMMENT_PATTERN = r"/\-[\-]?.*?\-\/"
 
 
@@ -314,8 +315,6 @@ def preprocess_lean_analysis(jixia_table, force_reprocess=False):
             jixia_name_map = pickle.load(f)
         with open(cache_path_table, "rb") as f:
             global_symbol_table = pickle.load(f)
-    for key, value in global_dependency_table.items():
-        print(key, value)
     # Return both the section-map and the new global table
     return jixia_name_map, global_symbol_table, global_dependency_table
 # --- [END MODIFIED FUNCTION] ---
@@ -728,10 +727,17 @@ def main():
     test_examples_with_context = build_context(aggregated_baseline_data, mapped_lean_analysis_data, global_symbol_table, global_dependency_table)
     
     output_path = os.path.join(OUTPUT_DIR, "tao_analysis_baseline_wrapped_context.jsonl")
+    print(f"Saving {len(test_examples_with_context)} test examples with context to {output_path}")
     with open(output_path, "w") as f:
         for example in test_examples_with_context:
             f.write(json.dumps(example) + "\n")
-    print(f"Saved {len(test_examples_with_context)} test examples with context to {output_path}")
+    
+    output_path = os.path.join(OUTPUT_DIR, "human_readable_tao_analysis_baseline_wrapped_context.txt")
+    print(f"Saving {len(test_examples_with_context)} test examples with context to {output_path}")
+    with open(output_path, "w") as f:
+        for example in test_examples_with_context:
+            f.write(example["chapter_name"] + ": " + example["FQN"] + "\n\n" + example["content"] + "\n\n")
+            f.write("-----------------------------------\n\n")
 
 if __name__ == "__main__":
     main()
