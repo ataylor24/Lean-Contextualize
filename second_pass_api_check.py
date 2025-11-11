@@ -6,8 +6,6 @@ from tqdm import tqdm
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import time
 
-OPENAI_API_KEY = "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"
-
 OUTPUT_DIR = "second_pass_api_check"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
@@ -84,7 +82,7 @@ def process_single_query(index: int, query: Dict[str, Any], client: Any) -> Dict
     return {"index": index, "updated_entry": updated_entry, "log_entry": log_entry}
 
 def main(data: List[Dict[str, Any]]):
-    client = OpenAI(api_key=OPENAI_API_KEY, timeout=1000)
+    client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"), timeout=1000)
     results_by_index: Dict[int, Dict[str, Any]] = {}
     updated_by_index: Dict[int, Dict[str, Any]] = {}
 
