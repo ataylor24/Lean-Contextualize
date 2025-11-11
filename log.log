@@ -1,0 +1,78 @@
+Force reprocessing lean analysis data...
+Removed cached lean analysis data (map).
+Removed cached lean analysis data (table).
+Preprocessing jixia analysis data...
+No cache found. Preprocessing data...
+Pass 2: Building section maps...
+Caching lean analysis data at /Users/alextaylor/Desktop/lean_prover/.cache/jixia_name_map_cache.pkl...
+Caching global symbol table at /Users/alextaylor/Desktop/lean_prover/.cache/global_symbol_table_cache.pkl...
+Caching global dependency table at /Users/alextaylor/Desktop/lean_prover/.cache/global_dependency_table_cache.pkl...
+Section_2_1 {'Section_2_1'}
+Section_2_2 {'Section_2_1', 'Section_2_2'}
+Section_2_3 {'Section_2_1', 'Section_2_2', 'Section_2_3'}
+Section_2_epilogue {'Section_2_2', 'Section_2_epilogue', 'Section_2_1', 'Section_2_3'}
+Section_3_1 {'Section_3_1'}
+Section_3_2 {'Section_3_2', 'Section_3_1'}
+Tools/ExistsUnique {'Tools/ExistsUnique'}
+Section_3_3 {'Tools/ExistsUnique', 'Section_3_1', 'Section_3_3'}
+Section_3_4 {'Section_3_1', 'Section_3_4'}
+Section_3_5 {'Section_3_1', 'Section_3_2', 'Section_3_5', 'Section_3_4'}
+Section_3_6 {'Section_3_1', 'Section_3_2', 'Section_3_4', 'Section_3_5', 'Section_3_6'}
+Section_3_epilogue {'Tools/ExistsUnique', 'Section_3_1', 'Section_3_epilogue'}
+Section_4_1 {'Section_4_1'}
+Section_4_2 {'Section_4_2'}
+Section_4_3 {'Section_4_3'}
+Section_4_4 {'Section_4_4'}
+Section_5_1 {'Section_5_1', 'Section_4_3'}
+Section_5_2 {'Section_5_1', 'Section_5_2', 'Section_4_3'}
+Section_5_3 {'Section_5_3', 'Section_5_1', 'Section_5_2', 'Section_4_3'}
+Section_5_4 {'Section_5_3', 'Section_5_1', 'Section_5_2', 'Section_4_3', 'Section_5_4'}
+Section_5_5 {'Section_5_3', 'Section_5_1', 'Section_5_5', 'Section_5_2', 'Section_4_3', 'Section_5_4'}
+Section_5_6 {'Section_5_6', 'Section_5_3', 'Section_5_1', 'Section_5_5', 'Section_5_2', 'Section_5_4', 'Section_4_3'}
+Section_5_epilogue {'Section_5_6', 'Section_5_3', 'Section_5_1', 'Section_5_5', 'Section_5_2', 'Section_5_4', 'Section_5_epilogue', 'Section_4_3'}
+Section_6_1 {'Section_5_6', 'Section_5_3', 'Section_5_1', 'Section_5_5', 'Section_5_2', 'Section_5_4', 'Section_6_1', 'Section_4_3', 'Section_5_epilogue'}
+Section_6_2 {'Section_5_6', 'Section_6_2', 'Section_5_3', 'Section_5_1', 'Section_5_5', 'Section_5_2', 'Section_5_4', 'Section_4_3', 'Section_5_epilogue'}
+Section_6_3 {'Section_5_3', 'Section_5_1', 'Section_5_5', 'Section_5_2', 'Section_5_4', 'Section_5_epilogue', 'Section_4_3', 'Section_5_6', 'Section_6_2', 'Section_6_1', 'Section_6_3'}
+Section_6_4 {'Section_5_6', 'Section_6_2', 'Section_5_3', 'Section_5_1', 'Section_5_5', 'Section_5_2', 'Section_6_4', 'Section_5_4', 'Section_6_1', 'Section_6_3', 'Section_4_3', 'Section_5_epilogue'}
+Section_6_5 {'Section_6_5', 'Section_5_6', 'Section_6_2', 'Section_5_3', 'Section_5_epilogue', 'Section_5_1', 'Section_5_5', 'Section_5_2', 'Section_6_4', 'Section_5_4', 'Section_6_1', 'Section_6_3', 'Section_4_3'}
+Section_6_6 {'Section_6_5', 'Section_5_6', 'Section_6_2', 'Section_5_3', 'Section_6_6', 'Section_5_1', 'Section_5_5', 'Section_5_2', 'Section_6_4', 'Section_5_4', 'Section_6_1', 'Section_5_epilogue', 'Section_6_3', 'Section_4_3'}
+Section_6_7 {'Section_5_3', 'Section_6_6', 'Section_5_1', 'Section_5_5', 'Section_5_2', 'Section_6_4', 'Section_5_4', 'Section_5_epilogue', 'Section_4_3', 'Section_5_6', 'Section_6_5', 'Section_6_2', 'Section_6_7', 'Section_6_1', 'Section_6_3'}
+Section_6_epilogue {'Section_5_3', 'Section_6_6', 'Section_5_1', 'Section_5_5', 'Section_5_2', 'Section_6_4', 'Section_5_4', 'Section_6_epilogue', 'Section_5_epilogue', 'Section_4_3', 'Section_5_6', 'Section_6_5', 'Section_6_2', 'Section_6_7', 'Section_6_1', 'Section_6_3'}
+Section_7_1 {'Section_7_1'}
+Section_7_2 {'Section_7_2'}
+Section_7_3 {'Section_5_3', 'Section_6_6', 'Section_7_2', 'Section_5_1', 'Section_5_5', 'Section_5_2', 'Section_6_4', 'Section_5_4', 'Section_7_3', 'Section_6_epilogue', 'Section_4_3', 'Section_5_epilogue', 'Section_5_6', 'Section_6_5', 'Section_6_2', 'Section_6_7', 'Section_6_1', 'Section_6_3'}
+Section_7_4 {'Section_7_4', 'Section_5_3', 'Section_6_6', 'Section_7_2', 'Section_5_1', 'Section_5_5', 'Section_5_2', 'Section_6_4', 'Section_5_4', 'Section_7_3', 'Section_6_epilogue', 'Section_4_3', 'Section_5_epilogue', 'Section_5_6', 'Section_6_5', 'Section_6_2', 'Section_6_7', 'Section_6_1', 'Section_6_3'}
+Section_7_5 {'Section_6_6', 'Section_7_2', 'Section_5_1', 'Section_5_5', 'Section_6_4', 'Section_5_4', 'Section_7_3', 'Section_6_epilogue', 'Section_5_6', 'Section_6_2', 'Section_6_1', 'Section_6_3', 'Section_7_4', 'Section_5_3', 'Section_5_2', 'Section_5_epilogue', 'Section_4_3', 'Section_6_5', 'Section_6_7', 'Section_7_5'}
+Section_8_1 {'Section_8_1'}
+Section_8_2 {'Section_6_6', 'Section_7_2', 'Section_5_1', 'Section_5_5', 'Section_6_4', 'Section_5_4', 'Section_7_3', 'Section_6_epilogue', 'Section_5_6', 'Section_6_2', 'Section_8_1', 'Section_8_2', 'Section_6_1', 'Section_6_3', 'Section_7_4', 'Section_5_3', 'Section_5_2', 'Section_4_3', 'Section_5_epilogue', 'Section_6_5', 'Section_6_7'}
+Section_8_3 {'Section_7_4', 'Section_8_3', 'Section_5_3', 'Section_6_6', 'Section_7_2', 'Section_5_1', 'Section_5_5', 'Section_5_2', 'Section_6_4', 'Section_5_4', 'Section_7_3', 'Section_6_epilogue', 'Section_4_3', 'Section_5_epilogue', 'Section_8_1', 'Section_5_6', 'Section_6_2', 'Section_6_5', 'Section_6_7', 'Section_8_2', 'Section_6_1', 'Section_6_3'}
+Section_8_4 {'Section_7_4', 'Section_5_3', 'Section_6_6', 'Section_7_2', 'Section_5_1', 'Section_5_5', 'Section_5_2', 'Section_6_4', 'Section_5_4', 'Section_7_3', 'Section_6_epilogue', 'Section_4_3', 'Section_5_epilogue', 'Section_8_1', 'Section_5_6', 'Section_6_2', 'Section_6_5', 'Section_6_7', 'Section_8_4', 'Section_8_2', 'Section_6_1', 'Section_6_3'}
+Section_8_5 {'Section_7_4', 'Section_5_3', 'Section_6_6', 'Section_7_2', 'Section_5_1', 'Section_5_5', 'Section_5_2', 'Section_6_4', 'Section_5_4', 'Section_7_3', 'Section_6_epilogue', 'Section_4_3', 'Section_5_epilogue', 'Section_8_1', 'Section_5_6', 'Section_8_5', 'Section_6_2', 'Section_6_5', 'Section_6_7', 'Section_8_4', 'Section_8_2', 'Section_6_1', 'Section_6_3'}
+Section_9_1 {'Section_5_6', 'Section_6_2', 'Section_5_3', 'Section_5_epilogue', 'Section_5_1', 'Section_5_5', 'Section_5_2', 'Section_6_4', 'Section_5_4', 'Section_6_1', 'Section_9_1', 'Section_6_3', 'Section_4_3'}
+Section_9_10 {'Section_9_10'}
+Section_9_2 {'Section_9_2'}
+Section_9_3 {'Section_5_6', 'Section_6_2', 'Section_5_3', 'Section_5_1', 'Section_5_5', 'Section_5_2', 'Section_6_4', 'Section_5_4', 'Section_6_1', 'Section_9_3', 'Section_9_1', 'Section_5_epilogue', 'Section_6_3', 'Section_4_3'}
+Section_9_4 {'Section_5_3', 'Section_5_1', 'Section_5_5', 'Section_5_2', 'Section_6_4', 'Section_5_4', 'Section_9_3', 'Section_9_4', 'Section_9_1', 'Section_5_epilogue', 'Section_4_3', 'Section_5_6', 'Section_6_2', 'Section_6_1', 'Section_6_3'}
+Section_9_5 {'Section_5_3', 'Section_5_1', 'Section_5_5', 'Section_5_2', 'Section_6_4', 'Section_5_4', 'Section_9_3', 'Section_9_1', 'Section_9_4', 'Section_5_epilogue', 'Section_4_3', 'Section_5_6', 'Section_6_2', 'Section_9_5', 'Section_6_1', 'Section_6_3'}
+Section_9_6 {'Section_5_3', 'Section_5_1', 'Section_5_5', 'Section_5_2', 'Section_6_4', 'Section_5_4', 'Section_9_3', 'Section_9_1', 'Section_9_4', 'Section_5_epilogue', 'Section_4_3', 'Section_5_6', 'Section_6_2', 'Section_9_6', 'Section_6_1', 'Section_6_3'}
+Section_9_7 {'Section_5_3', 'Section_9_7', 'Section_5_1', 'Section_5_5', 'Section_5_2', 'Section_6_4', 'Section_5_4', 'Section_9_3', 'Section_9_1', 'Section_9_4', 'Section_5_epilogue', 'Section_4_3', 'Section_5_6', 'Section_6_2', 'Section_6_1', 'Section_6_3'}
+Section_9_8 {'Section_5_3', 'Section_5_1', 'Section_5_5', 'Section_5_2', 'Section_6_4', 'Section_5_4', 'Section_9_3', 'Section_9_1', 'Section_9_4', 'Section_5_epilogue', 'Section_4_3', 'Section_5_6', 'Section_6_2', 'Section_9_6', 'Section_6_1', 'Section_6_3', 'Section_9_8'}
+Section_9_9 {'Section_5_3', 'Section_5_1', 'Section_5_5', 'Section_5_2', 'Section_6_4', 'Section_5_4', 'Section_9_3', 'Section_9_1', 'Section_9_4', 'Section_4_3', 'Section_5_epilogue', 'Section_5_6', 'Section_6_2', 'Section_9_6', 'Section_9_9', 'Section_6_1', 'Section_6_3'}
+Section_10_1 {'Section_10_1'}
+Section_10_2 {'Section_5_3', 'Section_5_1', 'Section_5_5', 'Section_5_2', 'Section_6_4', 'Section_5_4', 'Section_9_3', 'Section_9_1', 'Section_9_4', 'Section_10_2', 'Section_5_epilogue', 'Section_4_3', 'Section_5_6', 'Section_6_2', 'Section_9_6', 'Section_6_1', 'Section_6_3'}
+Section_10_3 {'Section_10_3'}
+Section_10_4 {'Section_5_3', 'Section_5_1', 'Section_5_5', 'Section_5_2', 'Section_6_4', 'Section_5_4', 'Section_9_3', 'Section_9_1', 'Section_9_4', 'Section_5_epilogue', 'Section_4_3', 'Section_5_6', 'Section_6_2', 'Section_10_1', 'Section_6_1', 'Section_10_4', 'Section_6_3'}
+Section_10_5 {'Section_5_1', 'Section_5_5', 'Section_6_4', 'Section_5_4', 'Section_9_4', 'Section_10_2', 'Section_5_6', 'Section_6_2', 'Section_6_1', 'Section_6_3', 'Section_10_5', 'Section_5_3', 'Section_5_2', 'Section_9_3', 'Section_9_1', 'Section_5_epilogue', 'Section_4_3', 'Section_9_6', 'Section_10_1'}
+Section_11_1 {'Section_11_1'}
+Section_11_9 {'Section_6_6', 'Section_7_2', 'Section_5_1', 'Section_5_5', 'Section_6_4', 'Section_5_4', 'Section_9_4', 'Section_7_3', 'Section_10_2', 'Section_6_epilogue', 'Section_5_6', 'Section_6_2', 'Section_11_2', 'Section_9_9', 'Section_11_5', 'Section_11_1', 'Section_11_8', 'Section_11_4', 'Section_6_1', 'Section_11_3', 'Section_6_3', 'Section_11_6', 'Section_5_3', 'Section_5_2', 'Section_9_3', 'Section_9_1', 'Section_4_3', 'Section_5_epilogue', 'Section_6_5', 'Section_9_6', 'Section_6_7', 'Section_10_1', 'Section_11_9', 'Section_9_8'}
+Section_11_10 {'Section_5_3', 'Section_5_1', 'Section_5_5', 'Section_5_2', 'Section_6_4', 'Section_5_4', 'Section_9_3', 'Section_9_1', 'Section_9_4', 'Section_5_epilogue', 'Section_4_3', 'Section_5_6', 'Section_6_2', 'Section_9_6', 'Section_11_10', 'Section_11_9', 'Section_6_1', 'Section_10_3', 'Section_6_3'}
+Section_11_2 {'Section_11_2', 'Section_11_1'}
+Section_11_3 {'Section_5_3', 'Section_5_1', 'Section_5_5', 'Section_5_2', 'Section_6_4', 'Section_5_4', 'Section_9_3', 'Section_9_1', 'Section_9_4', 'Section_5_epilogue', 'Section_4_3', 'Section_5_6', 'Section_6_2', 'Section_9_6', 'Section_11_2', 'Section_11_1', 'Section_6_1', 'Section_11_3', 'Section_6_3'}
+Section_11_4 {'Section_5_3', 'Section_5_1', 'Section_5_5', 'Section_5_2', 'Section_6_4', 'Section_5_4', 'Section_9_3', 'Section_9_1', 'Section_9_4', 'Section_5_epilogue', 'Section_4_3', 'Section_5_6', 'Section_6_2', 'Section_9_6', 'Section_11_2', 'Section_11_1', 'Section_11_4', 'Section_6_1', 'Section_11_3', 'Section_6_3'}
+Section_11_5 {'Section_5_1', 'Section_5_5', 'Section_6_4', 'Section_5_4', 'Section_9_4', 'Section_5_6', 'Section_6_2', 'Section_11_2', 'Section_9_9', 'Section_11_5', 'Section_11_1', 'Section_11_4', 'Section_6_1', 'Section_11_3', 'Section_6_3', 'Section_5_3', 'Section_5_2', 'Section_9_3', 'Section_9_1', 'Section_4_3', 'Section_5_epilogue', 'Section_9_6'}
+Section_11_6 {'Section_5_1', 'Section_5_5', 'Section_6_4', 'Section_5_4', 'Section_9_4', 'Section_5_6', 'Section_6_2', 'Section_11_2', 'Section_9_9', 'Section_11_5', 'Section_11_1', 'Section_11_4', 'Section_6_1', 'Section_11_3', 'Section_6_3', 'Section_11_6', 'Section_5_3', 'Section_5_2', 'Section_9_3', 'Section_9_1', 'Section_5_epilogue', 'Section_4_3', 'Section_9_6', 'Section_9_8'}
+Section_11_7 {'Section_5_3', 'Section_5_1', 'Section_5_5', 'Section_5_2', 'Section_6_4', 'Section_5_4', 'Section_9_3', 'Section_9_1', 'Section_9_4', 'Section_5_epilogue', 'Section_4_3', 'Section_5_6', 'Section_6_2', 'Section_9_6', 'Section_11_2', 'Section_11_1', 'Section_11_4', 'Section_6_1', 'Section_11_3', 'Section_6_3', 'Section_11_7'}
+Section_11_8 {'Section_5_3', 'Section_5_1', 'Section_5_5', 'Section_5_2', 'Section_6_4', 'Section_5_4', 'Section_9_3', 'Section_9_4', 'Section_9_1', 'Section_5_epilogue', 'Section_4_3', 'Section_6_3', 'Section_5_6', 'Section_6_2', 'Section_11_2', 'Section_9_9', 'Section_11_8', 'Section_11_5', 'Section_11_1', 'Section_9_6', 'Section_11_4', 'Section_6_1', 'Section_11_3', 'Section_11_6', 'Section_9_8'}
+Preprocessing baseline data...
+Loading cached baseline data...
+Saved 150 test examples with context to /Users/alextaylor/Desktop/lean_prover/tao_analysis_baseline_wrapped_context.jsonl

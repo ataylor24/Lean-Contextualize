@@ -1,0 +1,6229 @@
+[
+    {
+        "value": {
+            "range": [
+                1348,
+                1918
+            ],
+            "original": true
+        },
+        "type": {
+            "range": [
+                1334,
+                1347
+            ],
+            "original": true
+        },
+        "signature": {
+            "range": [
+                1332,
+                1347
+            ],
+            "pp": " : Setoid PreInt",
+            "original": true
+        },
+        "scopeInfo": {
+            "varDecls": [],
+            "scopedOpenDecl": [
+                [
+                    "Section_4_1",
+                    "PreInt"
+                ],
+                [
+                    "Section_4_1"
+                ]
+            ],
+            "openDecl": [],
+            "omitVars": [],
+            "levelNames": [],
+            "includeVars": [],
+            "currNamespace": [
+                "Section_4_1",
+                "PreInt"
+            ]
+        },
+        "ref": {
+            "range": [
+                1281,
+                1918
+            ],
+            "pp": "/-- Definition 4.1.1 -/\ninstance instSetoid : Setoid PreInt\n    where\n  r a b := a.minuend + b.subtrahend = b.minuend + a.subtrahend\n  iseqv :=\n    { refl := by sorry\n      symm := by sorry\n      trans := by\n        -- This proof is written to follow the structure of the original text.\n        \n        intro ⟨a, b⟩ ⟨c, d⟩ ⟨e, f⟩ h1 h2; simp_all\n        have h3 := congrArg₂ (· + ·) h1 h2; simp at h3\n        have : (a + f) + (c + d) = (e + b) + (c + d) :=\n          calc\n            (a + f) + (c + d) = a + d + (c + f) := by abel\n            _ = c + b + (e + d) := h3\n            _ = (e + b) + (c + d) := by abel\n        exact Nat.add_right_cancel this }",
+            "original": true
+        },
+        "params": [],
+        "name": [
+            "Section_4_1",
+            "PreInt",
+            "instSetoid"
+        ],
+        "modifiers": null,
+        "kind": "instance",
+        "id": {
+            "range": [
+                1314,
+                1331
+            ],
+            "original": true
+        }
+    },
+    {
+        "value": {
+            "range": [
+                2018,
+                2027
+            ],
+            "original": true
+        },
+        "type": {
+            "range": [
+                1962,
+                2017
+            ],
+            "original": true
+        },
+        "signature": {
+            "range": [
+                1946,
+                2017
+            ],
+            "pp": " (a b c d : ℕ) : (⟨a, b⟩ : PreInt) ≈ ⟨c, d⟩ ↔ a + d = c + b",
+            "original": true
+        },
+        "scopeInfo": {
+            "varDecls": [],
+            "scopedOpenDecl": [
+                [
+                    "Section_4_1",
+                    "PreInt"
+                ],
+                [
+                    "Section_4_1"
+                ]
+            ],
+            "openDecl": [],
+            "omitVars": [],
+            "levelNames": [],
+            "includeVars": [],
+            "currNamespace": [
+                "Section_4_1",
+                "PreInt"
+            ]
+        },
+        "ref": {
+            "range": [
+                1920,
+                2027
+            ],
+            "pp": "@[simp]\ntheorem eq (a b c d : ℕ) : (⟨a, b⟩ : PreInt) ≈ ⟨c, d⟩ ↔ a + d = c + b := by rfl",
+            "original": true
+        },
+        "params": [
+            {
+                "type": [
+                    1955,
+                    1958
+                ],
+                "ref": [
+                    1947,
+                    1948
+                ],
+                "id": [
+                    1947,
+                    1948
+                ],
+                "bi": "default"
+            },
+            {
+                "type": [
+                    1955,
+                    1958
+                ],
+                "ref": [
+                    1949,
+                    1950
+                ],
+                "id": [
+                    1949,
+                    1950
+                ],
+                "bi": "default"
+            },
+            {
+                "type": [
+                    1955,
+                    1958
+                ],
+                "ref": [
+                    1951,
+                    1952
+                ],
+                "id": [
+                    1951,
+                    1952
+                ],
+                "bi": "default"
+            },
+            {
+                "type": [
+                    1955,
+                    1958
+                ],
+                "ref": [
+                    1953,
+                    1954
+                ],
+                "id": [
+                    1953,
+                    1954
+                ],
+                "bi": "default"
+            }
+        ],
+        "name": [
+            "Section_4_1",
+            "PreInt",
+            "eq"
+        ],
+        "modifiers": null,
+        "kind": "theorem",
+        "id": {
+            "range": [
+                1936,
+                1945
+            ],
+            "original": true
+        }
+    },
+    {
+        "value": {
+            "range": [
+                2040,
+                2069
+            ],
+            "original": true
+        },
+        "type": null,
+        "signature": {
+            "range": null,
+            "pp": "",
+            "original": false
+        },
+        "scopeInfo": {
+            "varDecls": [],
+            "scopedOpenDecl": [
+                [
+                    "Section_4_1"
+                ]
+            ],
+            "openDecl": [],
+            "omitVars": [],
+            "levelNames": [],
+            "includeVars": [],
+            "currNamespace": [
+                "Section_4_1"
+            ]
+        },
+        "ref": {
+            "range": [
+                2029,
+                2069
+            ],
+            "pp": "abbrev Int :=\n  Quotient PreInt.instSetoid",
+            "original": true
+        },
+        "params": [],
+        "name": [
+            "Section_4_1",
+            "Int"
+        ],
+        "modifiers": null,
+        "kind": "abbrev",
+        "id": {
+            "range": [
+                2036,
+                2039
+            ],
+            "original": true
+        }
+    },
+    {
+        "value": {
+            "range": [
+                2110,
+                2154
+            ],
+            "original": true
+        },
+        "type": {
+            "range": [
+                2106,
+                2109
+            ],
+            "original": true
+        },
+        "signature": {
+            "range": [
+                2093,
+                2109
+            ],
+            "pp": " (a b : ℕ) : Int",
+            "original": true
+        },
+        "scopeInfo": {
+            "varDecls": [],
+            "scopedOpenDecl": [
+                [
+                    "Section_4_1",
+                    "Int"
+                ],
+                [
+                    "Section_4_1"
+                ]
+            ],
+            "openDecl": [],
+            "omitVars": [],
+            "levelNames": [],
+            "includeVars": [],
+            "currNamespace": [
+                "Section_4_1",
+                "Int"
+            ]
+        },
+        "ref": {
+            "range": [
+                2071,
+                2154
+            ],
+            "pp": "abbrev formalDiff (a b : ℕ) : Int :=\n  Quotient.mk PreInt.instSetoid ⟨a, b⟩",
+            "original": true
+        },
+        "params": [
+            {
+                "type": [
+                    2098,
+                    2101
+                ],
+                "ref": [
+                    2094,
+                    2095
+                ],
+                "id": [
+                    2094,
+                    2095
+                ],
+                "bi": "default"
+            },
+            {
+                "type": [
+                    2098,
+                    2101
+                ],
+                "ref": [
+                    2096,
+                    2097
+                ],
+                "id": [
+                    2096,
+                    2097
+                ],
+                "bi": "default"
+            }
+        ],
+        "name": [
+            "Section_4_1",
+            "Int",
+            "formalDiff"
+        ],
+        "modifiers": null,
+        "kind": "abbrev",
+        "id": {
+            "range": [
+                2078,
+                2092
+            ],
+            "original": true
+        }
+    },
+    {
+        "value": {
+            "range": [
+                2156,
+                2194
+            ],
+            "original": false
+        },
+        "type": {
+            "range": [
+                2156,
+                2194
+            ],
+            "original": false
+        },
+        "signature": {
+            "range": [
+                2156,
+                2194
+            ],
+            "pp": " : Lean.TrailingParserDescr✝",
+            "original": false
+        },
+        "scopeInfo": {
+            "varDecls": [],
+            "scopedOpenDecl": [
+                [
+                    "Section_4_1"
+                ]
+            ],
+            "openDecl": [],
+            "omitVars": [],
+            "levelNames": [],
+            "includeVars": [],
+            "currNamespace": [
+                "Section_4_1"
+            ]
+        },
+        "ref": {
+            "range": [
+                2156,
+                2194
+            ],
+            "pp": "@[term_parser 1000]\nmeta def «term_——_» : Lean.TrailingParserDescr✝ :=\n  ParserDescr.trailingNode✝ `Section_4_1.«term_——_» 100 101\n    (ParserDescr.binary✝ `andthen (ParserDescr.symbol✝ \" —— \") (ParserDescr.cat✝ `term 101))",
+            "original": false
+        },
+        "params": [],
+        "name": [
+            "Section_4_1",
+            "term_——_"
+        ],
+        "modifiers": null,
+        "kind": "definition",
+        "id": {
+            "range": [
+                2156,
+                2194
+            ],
+            "original": false
+        }
+    },
+    {
+        "value": {
+            "range": [
+                2156,
+                2194
+            ],
+            "original": false
+        },
+        "type": {
+            "range": [
+                2156,
+                2194
+            ],
+            "original": false
+        },
+        "signature": {
+            "range": [
+                2156,
+                2194
+            ],
+            "pp": " : Macro✝",
+            "original": false
+        },
+        "scopeInfo": {
+            "varDecls": [],
+            "scopedOpenDecl": [
+                [
+                    "Section_4_1"
+                ]
+            ],
+            "openDecl": [],
+            "omitVars": [],
+            "levelNames": [],
+            "includeVars": [],
+            "currNamespace": [
+                "Section_4_1"
+            ]
+        },
+        "ref": {
+            "range": [
+                2156,
+                2194
+            ],
+            "original": false
+        },
+        "params": [],
+        "name": [
+            "Section_4_1",
+            "_aux___macroRules_Section_4_1_term_——__1"
+        ],
+        "modifiers": null,
+        "kind": "definition",
+        "id": {
+            "range": [
+                2156,
+                2194
+            ],
+            "original": false
+        }
+    },
+    {
+        "value": {
+            "range": [
+                2156,
+                2194
+            ],
+            "original": false
+        },
+        "type": {
+            "range": [
+                2156,
+                2194
+            ],
+            "original": false
+        },
+        "signature": {
+            "range": [
+                2156,
+                2194
+            ],
+            "pp": " : Lean.PrettyPrinter.Unexpander✝",
+            "original": false
+        },
+        "scopeInfo": {
+            "varDecls": [],
+            "scopedOpenDecl": [
+                [
+                    "Section_4_1"
+                ]
+            ],
+            "openDecl": [],
+            "omitVars": [],
+            "levelNames": [],
+            "includeVars": [],
+            "currNamespace": [
+                "Section_4_1"
+            ]
+        },
+        "ref": {
+            "range": [
+                2156,
+                2194
+            ],
+            "original": false
+        },
+        "params": [],
+        "name": [
+            "Section_4_1",
+            "_aux___unexpand_Section_4_1_Int_formalDiff_1"
+        ],
+        "modifiers": null,
+        "kind": "definition",
+        "id": {
+            "range": [
+                2156,
+                2194
+            ],
+            "original": false
+        }
+    },
+    {
+        "value": {
+            "range": [
+                2303,
+                2366
+            ],
+            "original": true
+        },
+        "type": {
+            "range": [
+                2261,
+                2302
+            ],
+            "original": true
+        },
+        "signature": {
+            "range": [
+                2246,
+                2302
+            ],
+            "pp": " (a b c d : ℕ) : a —— b = c —— d ↔ a + d = c + b",
+            "original": true
+        },
+        "scopeInfo": {
+            "varDecls": [],
+            "scopedOpenDecl": [
+                [
+                    "Section_4_1",
+                    "Int"
+                ],
+                [
+                    "Section_4_1"
+                ]
+            ],
+            "openDecl": [],
+            "omitVars": [],
+            "levelNames": [],
+            "includeVars": [],
+            "currNamespace": [
+                "Section_4_1",
+                "Int"
+            ]
+        },
+        "ref": {
+            "range": [
+                2196,
+                2366
+            ],
+            "pp": "/-- Definition 4.1.1 (Integers) -/\ntheorem eq (a b c d : ℕ) : a —— b = c —— d ↔ a + d = c + b :=\n  ⟨Quotient.exact, by intro h; exact Quotient.sound h⟩",
+            "original": true
+        },
+        "params": [
+            {
+                "type": [
+                    2255,
+                    2258
+                ],
+                "ref": [
+                    2247,
+                    2248
+                ],
+                "id": [
+                    2247,
+                    2248
+                ],
+                "bi": "default"
+            },
+            {
+                "type": [
+                    2255,
+                    2258
+                ],
+                "ref": [
+                    2249,
+                    2250
+                ],
+                "id": [
+                    2249,
+                    2250
+                ],
+                "bi": "default"
+            },
+            {
+                "type": [
+                    2255,
+                    2258
+                ],
+                "ref": [
+                    2251,
+                    2252
+                ],
+                "id": [
+                    2251,
+                    2252
+                ],
+                "bi": "default"
+            },
+            {
+                "type": [
+                    2255,
+                    2258
+                ],
+                "ref": [
+                    2253,
+                    2254
+                ],
+                "id": [
+                    2253,
+                    2254
+                ],
+                "bi": "default"
+            }
+        ],
+        "name": [
+            "Section_4_1",
+            "Int",
+            "eq"
+        ],
+        "modifiers": null,
+        "kind": "theorem",
+        "id": {
+            "range": [
+                2239,
+                2245
+            ],
+            "original": true
+        }
+    },
+    {
+        "value": {
+            "range": [
+                2443,
+                2700
+            ],
+            "original": true
+        },
+        "type": {
+            "range": [
+                2427,
+                2442
+            ],
+            "original": true
+        },
+        "signature": {
+            "range": [
+                2425,
+                2442
+            ],
+            "pp": " : DecidableEq Int",
+            "original": true
+        },
+        "scopeInfo": {
+            "varDecls": [],
+            "scopedOpenDecl": [
+                [
+                    "Section_4_1",
+                    "Int"
+                ],
+                [
+                    "Section_4_1"
+                ]
+            ],
+            "openDecl": [],
+            "omitVars": [],
+            "levelNames": [],
+            "includeVars": [],
+            "currNamespace": [
+                "Section_4_1",
+                "Int"
+            ]
+        },
+        "ref": {
+            "range": [
+                2368,
+                2700
+            ],
+            "pp": "/-- Decidability of equality -/\ninstance decidableEq : DecidableEq Int := by\n  intro a b\n  have : ∀ (n : PreInt) (m : PreInt), Decidable (Quotient.mk PreInt.instSetoid n = Quotient.mk PreInt.instSetoid m) :=\n    by\n    intro ⟨a, b⟩ ⟨c, d⟩\n    rw [eq]\n    exact decEq _ _\n  exact Quotient.recOnSubsingleton₂ a b this",
+            "original": true
+        },
+        "params": [],
+        "name": [
+            "Section_4_1",
+            "Int",
+            "decidableEq"
+        ],
+        "modifiers": null,
+        "kind": "instance",
+        "id": {
+            "range": [
+                2409,
+                2424
+            ],
+            "original": true
+        }
+    },
+    {
+        "value": {
+            "range": [
+                2791,
+                2840
+            ],
+            "original": true
+        },
+        "type": {
+            "range": [
+                2767,
+                2790
+            ],
+            "original": true
+        },
+        "signature": {
+            "range": [
+                2757,
+                2790
+            ],
+            "pp": " (n : Int) : ∃ a b, n = a —— b",
+            "original": true
+        },
+        "scopeInfo": {
+            "varDecls": [],
+            "scopedOpenDecl": [
+                [
+                    "Section_4_1",
+                    "Int"
+                ],
+                [
+                    "Section_4_1"
+                ]
+            ],
+            "openDecl": [],
+            "omitVars": [],
+            "levelNames": [],
+            "includeVars": [],
+            "currNamespace": [
+                "Section_4_1",
+                "Int"
+            ]
+        },
+        "ref": {
+            "range": [
+                2702,
+                2840
+            ],
+            "pp": "/-- Definition 4.1.1 (Integers) -/\ntheorem eq_diff (n : Int) : ∃ a b, n = a —— b := by apply n.ind _; intro ⟨a, b⟩; use a, b",
+            "original": true
+        },
+        "params": [
+            {
+                "type": [
+                    2760,
+                    2763
+                ],
+                "ref": [
+                    2758,
+                    2759
+                ],
+                "id": [
+                    2758,
+                    2759
+                ],
+                "bi": "default"
+            }
+        ],
+        "name": [
+            "Section_4_1",
+            "Int",
+            "eq_diff"
+        ],
+        "modifiers": null,
+        "kind": "theorem",
+        "id": {
+            "range": [
+                2745,
+                2756
+            ],
+            "original": true
+        }
+    },
+    {
+        "value": {
+            "range": [
+                2916,
+                3217
+            ],
+            "original": true
+        },
+        "type": {
+            "range": [
+                2908,
+                2915
+            ],
+            "original": true
+        },
+        "signature": {
+            "range": [
+                2906,
+                2915
+            ],
+            "pp": " : Add Int",
+            "original": true
+        },
+        "scopeInfo": {
+            "varDecls": [],
+            "scopedOpenDecl": [
+                [
+                    "Section_4_1",
+                    "Int"
+                ],
+                [
+                    "Section_4_1"
+                ]
+            ],
+            "openDecl": [],
+            "omitVars": [],
+            "levelNames": [],
+            "includeVars": [],
+            "currNamespace": [
+                "Section_4_1",
+                "Int"
+            ]
+        },
+        "ref": {
+            "range": [
+                2842,
+                3217
+            ],
+            "pp": "/-- Lemma 4.1.3 (Addition well-defined) -/\ninstance instAdd : Add Int where\n  add :=\n    Quotient.lift₂ (fun ⟨a, b⟩ ⟨c, d⟩ ↦ (a + c) —— (b + d))\n      (by\n        intro ⟨a, b⟩ ⟨c, d⟩ ⟨a', b'⟩ ⟨c', d'⟩ h1 h2\n        simp [Setoid.r] at *\n        calc\n          _ = (a + b') + (c + d') := by abel\n          _ = (a' + b) + (c' + d) := by rw [h1, h2]\n          _ = _ := by abel)",
+            "original": true
+        },
+        "params": [],
+        "name": [
+            "Section_4_1",
+            "Int",
+            "instAdd"
+        ],
+        "modifiers": null,
+        "kind": "instance",
+        "id": {
+            "range": [
+                2894,
+                2905
+            ],
+            "original": true
+        }
+    },
+    {
+        "value": {
+            "range": [
+                3346,
+                3376
+            ],
+            "original": true
+        },
+        "type": {
+            "range": [
+                3303,
+                3345
+            ],
+            "original": true
+        },
+        "signature": {
+            "range": [
+                3287,
+                3345
+            ],
+            "pp": " (a b c d : ℕ) : a —— b + c —— d = (a + c) —— (b + d)",
+            "original": true
+        },
+        "scopeInfo": {
+            "varDecls": [],
+            "scopedOpenDecl": [
+                [
+                    "Section_4_1",
+                    "Int"
+                ],
+                [
+                    "Section_4_1"
+                ]
+            ],
+            "openDecl": [],
+            "omitVars": [],
+            "levelNames": [],
+            "includeVars": [],
+            "currNamespace": [
+                "Section_4_1",
+                "Int"
+            ]
+        },
+        "ref": {
+            "range": [
+                3219,
+                3376
+            ],
+            "pp": "/-- Definition 4.1.2 (Definition of addition) -/\ntheorem add_eq (a b c d : ℕ) : a —— b + c —— d = (a + c) —— (b + d) :=\n  Quotient.lift₂_mk _ _ _ _",
+            "original": true
+        },
+        "params": [
+            {
+                "type": [
+                    3296,
+                    3299
+                ],
+                "ref": [
+                    3288,
+                    3289
+                ],
+                "id": [
+                    3288,
+                    3289
+                ],
+                "bi": "default"
+            },
+            {
+                "type": [
+                    3296,
+                    3299
+                ],
+                "ref": [
+                    3290,
+                    3291
+                ],
+                "id": [
+                    3290,
+                    3291
+                ],
+                "bi": "default"
+            },
+            {
+                "type": [
+                    3296,
+                    3299
+                ],
+                "ref": [
+                    3292,
+                    3293
+                ],
+                "id": [
+                    3292,
+                    3293
+                ],
+                "bi": "default"
+            },
+            {
+                "type": [
+                    3296,
+                    3299
+                ],
+                "ref": [
+                    3294,
+                    3295
+                ],
+                "id": [
+                    3294,
+                    3295
+                ],
+                "bi": "default"
+            }
+        ],
+        "name": [
+            "Section_4_1",
+            "Int",
+            "add_eq"
+        ],
+        "modifiers": null,
+        "kind": "theorem",
+        "id": {
+            "range": [
+                3276,
+                3286
+            ],
+            "original": true
+        }
+    },
+    {
+        "value": {
+            "range": [
+                3573,
+                3708
+            ],
+            "original": true
+        },
+        "type": {
+            "range": [
+                3513,
+                3572
+            ],
+            "original": true
+        },
+        "signature": {
+            "range": [
+                3454,
+                3572
+            ],
+            "pp": " (a b a' b' c d : ℕ) (h : a —— b = a' —— b') :\n  (a * c + b * d) —— (a * d + b * c) = (a' * c + b' * d) —— (a' * d + b' * c)",
+            "original": true
+        },
+        "scopeInfo": {
+            "varDecls": [],
+            "scopedOpenDecl": [
+                [
+                    "Section_4_1",
+                    "Int"
+                ],
+                [
+                    "Section_4_1"
+                ]
+            ],
+            "openDecl": [],
+            "omitVars": [],
+            "levelNames": [],
+            "includeVars": [],
+            "currNamespace": [
+                "Section_4_1",
+                "Int"
+            ]
+        },
+        "ref": {
+            "range": [
+                3378,
+                3708
+            ],
+            "pp": "/-- Lemma 4.1.3 (Multiplication well-defined) -/\ntheorem mul_congr_left (a b a' b' c d : ℕ) (h : a —— b = a' —— b') :\n    (a * c + b * d) —— (a * d + b * c) = (a' * c + b' * d) —— (a' * d + b' * c) :=\n  by\n  simp only [eq] at *\n  calc\n    _ = c * (a + b') + d * (a' + b) := by ring\n    _ = c * (a' + b) + d * (a + b') := by rw [h]\n    _ = _ := by ring",
+            "original": true
+        },
+        "params": [
+            {
+                "type": [
+                    3471,
+                    3474
+                ],
+                "ref": [
+                    3455,
+                    3456
+                ],
+                "id": [
+                    3455,
+                    3456
+                ],
+                "bi": "default"
+            },
+            {
+                "type": [
+                    3471,
+                    3474
+                ],
+                "ref": [
+                    3457,
+                    3458
+                ],
+                "id": [
+                    3457,
+                    3458
+                ],
+                "bi": "default"
+            },
+            {
+                "type": [
+                    3471,
+                    3474
+                ],
+                "ref": [
+                    3459,
+                    3461
+                ],
+                "id": [
+                    3459,
+                    3461
+                ],
+                "bi": "default"
+            },
+            {
+                "type": [
+                    3471,
+                    3474
+                ],
+                "ref": [
+                    3462,
+                    3464
+                ],
+                "id": [
+                    3462,
+                    3464
+                ],
+                "bi": "default"
+            },
+            {
+                "type": [
+                    3471,
+                    3474
+                ],
+                "ref": [
+                    3465,
+                    3466
+                ],
+                "id": [
+                    3465,
+                    3466
+                ],
+                "bi": "default"
+            },
+            {
+                "type": [
+                    3471,
+                    3474
+                ],
+                "ref": [
+                    3467,
+                    3468
+                ],
+                "id": [
+                    3467,
+                    3468
+                ],
+                "bi": "default"
+            },
+            {
+                "type": [
+                    3480,
+                    3505
+                ],
+                "ref": [
+                    3477,
+                    3478
+                ],
+                "id": [
+                    3477,
+                    3478
+                ],
+                "bi": "default"
+            }
+        ],
+        "name": [
+            "Section_4_1",
+            "Int",
+            "mul_congr_left"
+        ],
+        "modifiers": null,
+        "kind": "theorem",
+        "id": {
+            "range": [
+                3435,
+                3453
+            ],
+            "original": true
+        }
+    },
+    {
+        "value": {
+            "range": [
+                3906,
+                4041
+            ],
+            "original": true
+        },
+        "type": {
+            "range": [
+                3846,
+                3905
+            ],
+            "original": true
+        },
+        "signature": {
+            "range": [
+                3787,
+                3905
+            ],
+            "pp": " (a b c d c' d' : ℕ) (h : c —— d = c' —— d') :\n  (a * c + b * d) —— (a * d + b * c) = (a * c' + b * d') —— (a * d' + b * c')",
+            "original": true
+        },
+        "scopeInfo": {
+            "varDecls": [],
+            "scopedOpenDecl": [
+                [
+                    "Section_4_1",
+                    "Int"
+                ],
+                [
+                    "Section_4_1"
+                ]
+            ],
+            "openDecl": [],
+            "omitVars": [],
+            "levelNames": [],
+            "includeVars": [],
+            "currNamespace": [
+                "Section_4_1",
+                "Int"
+            ]
+        },
+        "ref": {
+            "range": [
+                3710,
+                4041
+            ],
+            "pp": "/-- Lemma 4.1.3 (Multiplication well-defined) -/\ntheorem mul_congr_right (a b c d c' d' : ℕ) (h : c —— d = c' —— d') :\n    (a * c + b * d) —— (a * d + b * c) = (a * c' + b * d') —— (a * d' + b * c') :=\n  by\n  simp only [eq] at *\n  calc\n    _ = a * (c + d') + b * (c' + d) := by ring\n    _ = a * (c' + d) + b * (c + d') := by rw [h]\n    _ = _ := by ring",
+            "original": true
+        },
+        "params": [
+            {
+                "type": [
+                    3804,
+                    3807
+                ],
+                "ref": [
+                    3788,
+                    3789
+                ],
+                "id": [
+                    3788,
+                    3789
+                ],
+                "bi": "default"
+            },
+            {
+                "type": [
+                    3804,
+                    3807
+                ],
+                "ref": [
+                    3790,
+                    3791
+                ],
+                "id": [
+                    3790,
+                    3791
+                ],
+                "bi": "default"
+            },
+            {
+                "type": [
+                    3804,
+                    3807
+                ],
+                "ref": [
+                    3792,
+                    3793
+                ],
+                "id": [
+                    3792,
+                    3793
+                ],
+                "bi": "default"
+            },
+            {
+                "type": [
+                    3804,
+                    3807
+                ],
+                "ref": [
+                    3794,
+                    3795
+                ],
+                "id": [
+                    3794,
+                    3795
+                ],
+                "bi": "default"
+            },
+            {
+                "type": [
+                    3804,
+                    3807
+                ],
+                "ref": [
+                    3796,
+                    3798
+                ],
+                "id": [
+                    3796,
+                    3798
+                ],
+                "bi": "default"
+            },
+            {
+                "type": [
+                    3804,
+                    3807
+                ],
+                "ref": [
+                    3799,
+                    3801
+                ],
+                "id": [
+                    3799,
+                    3801
+                ],
+                "bi": "default"
+            },
+            {
+                "type": [
+                    3813,
+                    3838
+                ],
+                "ref": [
+                    3810,
+                    3811
+                ],
+                "id": [
+                    3810,
+                    3811
+                ],
+                "bi": "default"
+            }
+        ],
+        "name": [
+            "Section_4_1",
+            "Int",
+            "mul_congr_right"
+        ],
+        "modifiers": null,
+        "kind": "theorem",
+        "id": {
+            "range": [
+                3767,
+                3786
+            ],
+            "original": true
+        }
+    },
+    {
+        "value": {
+            "range": [
+                4274,
+                4354
+            ],
+            "original": true
+        },
+        "type": {
+            "range": [
+                4210,
+                4273
+            ],
+            "original": true
+        },
+        "signature": {
+            "range": [
+                4114,
+                4273
+            ],
+            "pp": " {a b c d a' b' c' d' : ℕ} (h1 : a —— b = a' —— b') (h2 : c —— d = c' —— d') :\n  (a * c + b * d) —— (a * d + b * c) = (a' * c' + b' * d') —— (a' * d' + b' * c')",
+            "original": true
+        },
+        "scopeInfo": {
+            "varDecls": [],
+            "scopedOpenDecl": [
+                [
+                    "Section_4_1",
+                    "Int"
+                ],
+                [
+                    "Section_4_1"
+                ]
+            ],
+            "openDecl": [],
+            "omitVars": [],
+            "levelNames": [],
+            "includeVars": [],
+            "currNamespace": [
+                "Section_4_1",
+                "Int"
+            ]
+        },
+        "ref": {
+            "range": [
+                4043,
+                4354
+            ],
+            "pp": "/-- Lemma 4.1.3 (Multiplication well-defined) -/\ntheorem mul_congr {a b c d a' b' c' d' : ℕ} (h1 : a —— b = a' —— b') (h2 : c —— d = c' —— d') :\n    (a * c + b * d) —— (a * d + b * c) = (a' * c' + b' * d') —— (a' * d' + b' * c') := by\n  rw [mul_congr_left a b a' b' c d h1, mul_congr_right a' b' c d c' d' h2]",
+            "original": true
+        },
+        "params": [
+            {
+                "type": [
+                    4137,
+                    4140
+                ],
+                "ref": [
+                    4115,
+                    4116
+                ],
+                "id": [
+                    4115,
+                    4116
+                ],
+                "bi": "implicit"
+            },
+            {
+                "type": [
+                    4137,
+                    4140
+                ],
+                "ref": [
+                    4117,
+                    4118
+                ],
+                "id": [
+                    4117,
+                    4118
+                ],
+                "bi": "implicit"
+            },
+            {
+                "type": [
+                    4137,
+                    4140
+                ],
+                "ref": [
+                    4119,
+                    4120
+                ],
+                "id": [
+                    4119,
+                    4120
+                ],
+                "bi": "implicit"
+            },
+            {
+                "type": [
+                    4137,
+                    4140
+                ],
+                "ref": [
+                    4121,
+                    4122
+                ],
+                "id": [
+                    4121,
+                    4122
+                ],
+                "bi": "implicit"
+            },
+            {
+                "type": [
+                    4137,
+                    4140
+                ],
+                "ref": [
+                    4123,
+                    4125
+                ],
+                "id": [
+                    4123,
+                    4125
+                ],
+                "bi": "implicit"
+            },
+            {
+                "type": [
+                    4137,
+                    4140
+                ],
+                "ref": [
+                    4126,
+                    4128
+                ],
+                "id": [
+                    4126,
+                    4128
+                ],
+                "bi": "implicit"
+            },
+            {
+                "type": [
+                    4137,
+                    4140
+                ],
+                "ref": [
+                    4129,
+                    4131
+                ],
+                "id": [
+                    4129,
+                    4131
+                ],
+                "bi": "implicit"
+            },
+            {
+                "type": [
+                    4137,
+                    4140
+                ],
+                "ref": [
+                    4132,
+                    4134
+                ],
+                "id": [
+                    4132,
+                    4134
+                ],
+                "bi": "implicit"
+            },
+            {
+                "type": [
+                    4147,
+                    4172
+                ],
+                "ref": [
+                    4143,
+                    4145
+                ],
+                "id": [
+                    4143,
+                    4145
+                ],
+                "bi": "default"
+            },
+            {
+                "type": [
+                    4179,
+                    4204
+                ],
+                "ref": [
+                    4175,
+                    4177
+                ],
+                "id": [
+                    4175,
+                    4177
+                ],
+                "bi": "default"
+            }
+        ],
+        "name": [
+            "Section_4_1",
+            "Int",
+            "mul_congr"
+        ],
+        "modifiers": null,
+        "kind": "theorem",
+        "id": {
+            "range": [
+                4100,
+                4113
+            ],
+            "original": true
+        }
+    },
+    {
+        "value": {
+            "range": [
+                4387,
+                4626
+            ],
+            "original": true
+        },
+        "type": {
+            "range": [
+                4379,
+                4386
+            ],
+            "original": true
+        },
+        "signature": {
+            "range": [
+                4377,
+                4386
+            ],
+            "pp": " : Mul Int",
+            "original": true
+        },
+        "scopeInfo": {
+            "varDecls": [],
+            "scopedOpenDecl": [
+                [
+                    "Section_4_1",
+                    "Int"
+                ],
+                [
+                    "Section_4_1"
+                ]
+            ],
+            "openDecl": [],
+            "omitVars": [],
+            "levelNames": [],
+            "includeVars": [],
+            "currNamespace": [
+                "Section_4_1",
+                "Int"
+            ]
+        },
+        "ref": {
+            "range": [
+                4356,
+                4626
+            ],
+            "pp": "instance instMul : Mul Int where\n  mul :=\n    Quotient.lift₂ (fun ⟨a, b⟩ ⟨c, d⟩ ↦ (a * c + b * d) —— (a * d + b * c))\n      (by\n        intro ⟨a, b⟩ ⟨c, d⟩ ⟨a', b'⟩ ⟨c', d'⟩ h1 h2; simp at h1 h2\n        convert mul_congr _ _ <;> simpa)",
+            "original": true
+        },
+        "params": [],
+        "name": [
+            "Section_4_1",
+            "Int",
+            "instMul"
+        ],
+        "modifiers": null,
+        "kind": "instance",
+        "id": {
+            "range": [
+                4365,
+                4376
+            ],
+            "original": true
+        }
+    },
+    {
+        "value": {
+            "range": [
+                4769,
+                4799
+            ],
+            "original": true
+        },
+        "type": {
+            "range": [
+                4716,
+                4768
+            ],
+            "original": true
+        },
+        "signature": {
+            "range": [
+                4700,
+                4768
+            ],
+            "pp": " (a b c d : ℕ) : a —— b * c —— d = (a * c + b * d) —— (a * d + b * c)",
+            "original": true
+        },
+        "scopeInfo": {
+            "varDecls": [],
+            "scopedOpenDecl": [
+                [
+                    "Section_4_1",
+                    "Int"
+                ],
+                [
+                    "Section_4_1"
+                ]
+            ],
+            "openDecl": [],
+            "omitVars": [],
+            "levelNames": [],
+            "includeVars": [],
+            "currNamespace": [
+                "Section_4_1",
+                "Int"
+            ]
+        },
+        "ref": {
+            "range": [
+                4628,
+                4799
+            ],
+            "pp": "/-- Definition 4.1.2 (Multiplication of integers) -/\ntheorem mul_eq (a b c d : ℕ) : a —— b * c —— d = (a * c + b * d) —— (a * d + b * c) :=\n  Quotient.lift₂_mk _ _ _ _",
+            "original": true
+        },
+        "params": [
+            {
+                "type": [
+                    4709,
+                    4712
+                ],
+                "ref": [
+                    4701,
+                    4702
+                ],
+                "id": [
+                    4701,
+                    4702
+                ],
+                "bi": "default"
+            },
+            {
+                "type": [
+                    4709,
+                    4712
+                ],
+                "ref": [
+                    4703,
+                    4704
+                ],
+                "id": [
+                    4703,
+                    4704
+                ],
+                "bi": "default"
+            },
+            {
+                "type": [
+                    4709,
+                    4712
+                ],
+                "ref": [
+                    4705,
+                    4706
+                ],
+                "id": [
+                    4705,
+                    4706
+                ],
+                "bi": "default"
+            },
+            {
+                "type": [
+                    4709,
+                    4712
+                ],
+                "ref": [
+                    4707,
+                    4708
+                ],
+                "id": [
+                    4707,
+                    4708
+                ],
+                "bi": "default"
+            }
+        ],
+        "name": [
+            "Section_4_1",
+            "Int",
+            "mul_eq"
+        ],
+        "modifiers": null,
+        "kind": "theorem",
+        "id": {
+            "range": [
+                4689,
+                4699
+            ],
+            "original": true
+        }
+    },
+    {
+        "value": {
+            "range": [
+                4846,
+                4873
+            ],
+            "original": true
+        },
+        "type": {
+            "range": [
+                4834,
+                4845
+            ],
+            "original": true
+        },
+        "signature": {
+            "range": [
+                4824,
+                4845
+            ],
+            "pp": " {n : ℕ} : OfNat Int n",
+            "original": true
+        },
+        "scopeInfo": {
+            "varDecls": [],
+            "scopedOpenDecl": [
+                [
+                    "Section_4_1",
+                    "Int"
+                ],
+                [
+                    "Section_4_1"
+                ]
+            ],
+            "openDecl": [],
+            "omitVars": [],
+            "levelNames": [],
+            "includeVars": [],
+            "currNamespace": [
+                "Section_4_1",
+                "Int"
+            ]
+        },
+        "ref": {
+            "range": [
+                4801,
+                4873
+            ],
+            "pp": "instance instOfNat {n : ℕ} : OfNat Int n where ofNat := n —— 0",
+            "original": true
+        },
+        "params": [
+            {
+                "type": [
+                    4827,
+                    4830
+                ],
+                "ref": [
+                    4825,
+                    4826
+                ],
+                "id": [
+                    4825,
+                    4826
+                ],
+                "bi": "implicit"
+            }
+        ],
+        "name": [
+            "Section_4_1",
+            "Int",
+            "instOfNat"
+        ],
+        "modifiers": null,
+        "kind": "instance",
+        "id": {
+            "range": [
+                4810,
+                4823
+            ],
+            "original": true
+        }
+    },
+    {
+        "value": {
+            "range": [
+                4914,
+                4945
+            ],
+            "original": true
+        },
+        "type": {
+            "range": [
+                4902,
+                4913
+            ],
+            "original": true
+        },
+        "signature": {
+            "range": [
+                4900,
+                4913
+            ],
+            "pp": " : NatCast Int",
+            "original": true
+        },
+        "scopeInfo": {
+            "varDecls": [],
+            "scopedOpenDecl": [
+                [
+                    "Section_4_1",
+                    "Int"
+                ],
+                [
+                    "Section_4_1"
+                ]
+            ],
+            "openDecl": [],
+            "omitVars": [],
+            "levelNames": [],
+            "includeVars": [],
+            "currNamespace": [
+                "Section_4_1",
+                "Int"
+            ]
+        },
+        "ref": {
+            "range": [
+                4875,
+                4945
+            ],
+            "pp": "instance instNatCast : NatCast Int where natCast n := n —— 0",
+            "original": true
+        },
+        "params": [],
+        "name": [
+            "Section_4_1",
+            "Int",
+            "instNatCast"
+        ],
+        "modifiers": null,
+        "kind": "instance",
+        "id": {
+            "range": [
+                4884,
+                4899
+            ],
+            "original": true
+        }
+    },
+    {
+        "value": {
+            "range": [
+                5000,
+                5006
+            ],
+            "original": true
+        },
+        "type": {
+            "range": [
+                4978,
+                4999
+            ],
+            "original": true
+        },
+        "signature": {
+            "range": [
+                4968,
+                4999
+            ],
+            "pp": " (n : ℕ) : ofNat(n) = n —— 0",
+            "original": true
+        },
+        "scopeInfo": {
+            "varDecls": [],
+            "scopedOpenDecl": [
+                [
+                    "Section_4_1",
+                    "Int"
+                ],
+                [
+                    "Section_4_1"
+                ]
+            ],
+            "openDecl": [],
+            "omitVars": [],
+            "levelNames": [],
+            "includeVars": [],
+            "currNamespace": [
+                "Section_4_1",
+                "Int"
+            ]
+        },
+        "ref": {
+            "range": [
+                4947,
+                5006
+            ],
+            "pp": "theorem ofNat_eq (n : ℕ) : ofNat(n) = n —— 0 :=\n  rfl",
+            "original": true
+        },
+        "params": [
+            {
+                "type": [
+                    4971,
+                    4974
+                ],
+                "ref": [
+                    4969,
+                    4970
+                ],
+                "id": [
+                    4969,
+                    4970
+                ],
+                "bi": "default"
+            }
+        ],
+        "name": [
+            "Section_4_1",
+            "Int",
+            "ofNat_eq"
+        ],
+        "modifiers": null,
+        "kind": "theorem",
+        "id": {
+            "range": [
+                4955,
+                4967
+            ],
+            "original": true
+        }
+    },
+    {
+        "value": {
+            "range": [
+                5062,
+                5068
+            ],
+            "original": true
+        },
+        "type": {
+            "range": [
+                5041,
+                5061
+            ],
+            "original": true
+        },
+        "signature": {
+            "range": [
+                5031,
+                5061
+            ],
+            "pp": " (n : ℕ) : (n : Int) = n —— 0",
+            "original": true
+        },
+        "scopeInfo": {
+            "varDecls": [],
+            "scopedOpenDecl": [
+                [
+                    "Section_4_1",
+                    "Int"
+                ],
+                [
+                    "Section_4_1"
+                ]
+            ],
+            "openDecl": [],
+            "omitVars": [],
+            "levelNames": [],
+            "includeVars": [],
+            "currNamespace": [
+                "Section_4_1",
+                "Int"
+            ]
+        },
+        "ref": {
+            "range": [
+                5008,
+                5068
+            ],
+            "pp": "theorem natCast_eq (n : ℕ) : (n : Int) = n —— 0 :=\n  rfl",
+            "original": true
+        },
+        "params": [
+            {
+                "type": [
+                    5034,
+                    5037
+                ],
+                "ref": [
+                    5032,
+                    5033
+                ],
+                "id": [
+                    5032,
+                    5033
+                ],
+                "bi": "default"
+            }
+        ],
+        "name": [
+            "Section_4_1",
+            "Int",
+            "natCast_eq"
+        ],
+        "modifiers": null,
+        "kind": "theorem",
+        "id": {
+            "range": [
+                5016,
+                5030
+            ],
+            "original": true
+        }
+    },
+    {
+        "value": {
+            "range": [
+                5147,
+                5156
+            ],
+            "original": true
+        },
+        "type": {
+            "range": [
+                5114,
+                5146
+            ],
+            "original": true
+        },
+        "signature": {
+            "range": [
+                5104,
+                5146
+            ],
+            "pp": " (n : ℕ) : ((ofNat(n) : ℕ) : Int) = ofNat(n)",
+            "original": true
+        },
+        "scopeInfo": {
+            "varDecls": [],
+            "scopedOpenDecl": [
+                [
+                    "Section_4_1",
+                    "Int"
+                ],
+                [
+                    "Section_4_1"
+                ]
+            ],
+            "openDecl": [],
+            "omitVars": [],
+            "levelNames": [],
+            "includeVars": [],
+            "currNamespace": [
+                "Section_4_1",
+                "Int"
+            ]
+        },
+        "ref": {
+            "range": [
+                5070,
+                5156
+            ],
+            "pp": "@[simp]\ntheorem natCast_ofNat (n : ℕ) : ((ofNat(n) : ℕ) : Int) = ofNat(n) := by rfl",
+            "original": true
+        },
+        "params": [
+            {
+                "type": [
+                    5107,
+                    5110
+                ],
+                "ref": [
+                    5105,
+                    5106
+                ],
+                "id": [
+                    5105,
+                    5106
+                ],
+                "bi": "default"
+            }
+        ],
+        "name": [
+            "Section_4_1",
+            "Int",
+            "natCast_ofNat"
+        ],
+        "modifiers": null,
+        "kind": "theorem",
+        "id": {
+            "range": [
+                5086,
+                5103
+            ],
+            "original": true
+        }
+    },
+    {
+        "value": {
+            "range": [
+                5260,
+                5307
+            ],
+            "original": true
+        },
+        "type": {
+            "range": [
+                5200,
+                5259
+            ],
+            "original": true
+        },
+        "signature": {
+            "range": [
+                5188,
+                5259
+            ],
+            "pp": " (n m : ℕ) : (ofNat(n) : Int) = (ofNat(m) : Int) ↔ ofNat(n) = ofNat(m)",
+            "original": true
+        },
+        "scopeInfo": {
+            "varDecls": [],
+            "scopedOpenDecl": [
+                [
+                    "Section_4_1",
+                    "Int"
+                ],
+                [
+                    "Section_4_1"
+                ]
+            ],
+            "openDecl": [],
+            "omitVars": [],
+            "levelNames": [],
+            "includeVars": [],
+            "currNamespace": [
+                "Section_4_1",
+                "Int"
+            ]
+        },
+        "ref": {
+            "range": [
+                5158,
+                5307
+            ],
+            "pp": "@[simp]\ntheorem ofNat_inj (n m : ℕ) : (ofNat(n) : Int) = (ofNat(m) : Int) ↔ ofNat(n) = ofNat(m) := by\n  simp only [ofNat_eq, eq, add_zero]; rfl",
+            "original": true
+        },
+        "params": [
+            {
+                "type": [
+                    5193,
+                    5196
+                ],
+                "ref": [
+                    5189,
+                    5190
+                ],
+                "id": [
+                    5189,
+                    5190
+                ],
+                "bi": "default"
+            },
+            {
+                "type": [
+                    5193,
+                    5196
+                ],
+                "ref": [
+                    5191,
+                    5192
+                ],
+                "id": [
+                    5191,
+                    5192
+                ],
+                "bi": "default"
+            }
+        ],
+        "name": [
+            "Section_4_1",
+            "Int",
+            "ofNat_inj"
+        ],
+        "modifiers": null,
+        "kind": "theorem",
+        "id": {
+            "range": [
+                5174,
+                5187
+            ],
+            "original": true
+        }
+    },
+    {
+        "value": {
+            "range": [
+                5385,
+                5429
+            ],
+            "original": true
+        },
+        "type": {
+            "range": [
+                5353,
+                5384
+            ],
+            "original": true
+        },
+        "signature": {
+            "range": [
+                5341,
+                5384
+            ],
+            "pp": " (n m : ℕ) : (n : Int) = (m : Int) ↔ n = m",
+            "original": true
+        },
+        "scopeInfo": {
+            "varDecls": [],
+            "scopedOpenDecl": [
+                [
+                    "Section_4_1",
+                    "Int"
+                ],
+                [
+                    "Section_4_1"
+                ]
+            ],
+            "openDecl": [],
+            "omitVars": [],
+            "levelNames": [],
+            "includeVars": [],
+            "currNamespace": [
+                "Section_4_1",
+                "Int"
+            ]
+        },
+        "ref": {
+            "range": [
+                5309,
+                5429
+            ],
+            "pp": "@[simp]\ntheorem natCast_inj (n m : ℕ) : (n : Int) = (m : Int) ↔ n = m := by simp only [natCast_eq, eq, add_zero]",
+            "original": true
+        },
+        "params": [
+            {
+                "type": [
+                    5346,
+                    5349
+                ],
+                "ref": [
+                    5342,
+                    5343
+                ],
+                "id": [
+                    5342,
+                    5343
+                ],
+                "bi": "default"
+            },
+            {
+                "type": [
+                    5346,
+                    5349
+                ],
+                "ref": [
+                    5344,
+                    5345
+                ],
+                "id": [
+                    5344,
+                    5345
+                ],
+                "bi": "default"
+            }
+        ],
+        "name": [
+            "Section_4_1",
+            "Int",
+            "natCast_inj"
+        ],
+        "modifiers": null,
+        "kind": "theorem",
+        "id": {
+            "range": [
+                5325,
+                5340
+            ],
+            "original": true
+        }
+    },
+    {
+        "value": {
+            "range": [
+                5456,
+                5462
+            ],
+            "original": true
+        },
+        "type": {
+            "range": [
+                5441,
+                5455
+            ],
+            "original": true
+        },
+        "signature": {
+            "range": [
+                5439,
+                5455
+            ],
+            "pp": " : 3 = 3 —— 0",
+            "original": true
+        },
+        "scopeInfo": {
+            "varDecls": [],
+            "scopedOpenDecl": [
+                [
+                    "Section_4_1"
+                ]
+            ],
+            "openDecl": [],
+            "omitVars": [],
+            "levelNames": [],
+            "includeVars": [],
+            "currNamespace": [
+                "Section_4_1"
+            ]
+        },
+        "ref": {
+            "range": [
+                5431,
+                5462
+            ],
+            "pp": "example : 3 = 3 —— 0 :=\n  rfl",
+            "original": true
+        },
+        "params": [],
+        "name": [
+            "Section_4_1",
+            "_example"
+        ],
+        "modifiers": null,
+        "kind": "example",
+        "id": {
+            "range": [
+                5431,
+                5438
+            ],
+            "original": false
+        }
+    },
+    {
+        "value": {
+            "range": [
+                5489,
+                5520
+            ],
+            "original": true
+        },
+        "type": {
+            "range": [
+                5474,
+                5488
+            ],
+            "original": true
+        },
+        "signature": {
+            "range": [
+                5472,
+                5488
+            ],
+            "pp": " : 3 = 4 —— 1",
+            "original": true
+        },
+        "scopeInfo": {
+            "varDecls": [],
+            "scopedOpenDecl": [
+                [
+                    "Section_4_1"
+                ]
+            ],
+            "openDecl": [],
+            "omitVars": [],
+            "levelNames": [],
+            "includeVars": [],
+            "currNamespace": [
+                "Section_4_1"
+            ]
+        },
+        "ref": {
+            "range": [
+                5464,
+                5520
+            ],
+            "pp": "example : 3 = 4 —— 1 := by rw [Int.ofNat_eq, Int.eq]",
+            "original": true
+        },
+        "params": [],
+        "name": [
+            "Section_4_1",
+            "_example"
+        ],
+        "modifiers": null,
+        "kind": "example",
+        "id": {
+            "range": [
+                5464,
+                5471
+            ],
+            "original": false
+        }
+    },
+    {
+        "value": {
+            "range": [
+                5652,
+                5663
+            ],
+            "original": true
+        },
+        "type": {
+            "range": [
+                5628,
+                5651
+            ],
+            "original": true
+        },
+        "signature": {
+            "range": [
+                5616,
+                5651
+            ],
+            "pp": " (n : ℕ) : (n : Int) = 0 ↔ n = 0",
+            "original": true
+        },
+        "scopeInfo": {
+            "varDecls": [],
+            "scopedOpenDecl": [
+                [
+                    "Section_4_1",
+                    "Int"
+                ],
+                [
+                    "Section_4_1"
+                ]
+            ],
+            "openDecl": [],
+            "omitVars": [],
+            "levelNames": [],
+            "includeVars": [],
+            "currNamespace": [
+                "Section_4_1",
+                "Int"
+            ]
+        },
+        "ref": {
+            "range": [
+                5522,
+                5663
+            ],
+            "pp": "/-- (Not from textbook) 0 is the only natural whose cast is 0 -/\ntheorem cast_eq_0_iff_eq_0 (n : ℕ) : (n : Int) = 0 ↔ n = 0 := by sorry",
+            "original": true
+        },
+        "params": [
+            {
+                "type": [
+                    5621,
+                    5624
+                ],
+                "ref": [
+                    5617,
+                    5618
+                ],
+                "id": [
+                    5617,
+                    5618
+                ],
+                "bi": "default"
+            }
+        ],
+        "name": [
+            "Section_4_1",
+            "Int",
+            "cast_eq_0_iff_eq_0"
+        ],
+        "modifiers": null,
+        "kind": "theorem",
+        "id": {
+            "range": [
+                5593,
+                5615
+            ],
+            "original": true
+        }
+    },
+    {
+        "value": {
+            "range": [
+                5760,
+                5833
+            ],
+            "original": true
+        },
+        "type": {
+            "range": [
+                5752,
+                5759
+            ],
+            "original": true
+        },
+        "signature": {
+            "range": [
+                5750,
+                5759
+            ],
+            "pp": " : Neg Int",
+            "original": true
+        },
+        "scopeInfo": {
+            "varDecls": [],
+            "scopedOpenDecl": [
+                [
+                    "Section_4_1",
+                    "Int"
+                ],
+                [
+                    "Section_4_1"
+                ]
+            ],
+            "openDecl": [],
+            "omitVars": [],
+            "levelNames": [],
+            "includeVars": [],
+            "currNamespace": [
+                "Section_4_1",
+                "Int"
+            ]
+        },
+        "ref": {
+            "range": [
+                5665,
+                5833
+            ],
+            "pp": "/-- Definition 4.1.4 (Negation of integers) / Exercise 4.1.2 -/\ninstance instNeg : Neg Int where neg := Quotient.lift (fun ⟨a, b⟩ ↦ b —— a) (by sorry)",
+            "original": true
+        },
+        "params": [],
+        "name": [
+            "Section_4_1",
+            "Int",
+            "instNeg"
+        ],
+        "modifiers": null,
+        "kind": "instance",
+        "id": {
+            "range": [
+                5738,
+                5749
+            ],
+            "original": true
+        }
+    },
+    {
+        "value": {
+            "range": [
+                5893,
+                5899
+            ],
+            "original": true
+        },
+        "type": {
+            "range": [
+                5866,
+                5892
+            ],
+            "original": true
+        },
+        "signature": {
+            "range": [
+                5854,
+                5892
+            ],
+            "pp": " (a b : ℕ) : -(a —— b) = b —— a",
+            "original": true
+        },
+        "scopeInfo": {
+            "varDecls": [],
+            "scopedOpenDecl": [
+                [
+                    "Section_4_1",
+                    "Int"
+                ],
+                [
+                    "Section_4_1"
+                ]
+            ],
+            "openDecl": [],
+            "omitVars": [],
+            "levelNames": [],
+            "includeVars": [],
+            "currNamespace": [
+                "Section_4_1",
+                "Int"
+            ]
+        },
+        "ref": {
+            "range": [
+                5835,
+                5899
+            ],
+            "pp": "theorem neg_eq (a b : ℕ) : -(a —— b) = b —— a :=\n  rfl",
+            "original": true
+        },
+        "params": [
+            {
+                "type": [
+                    5859,
+                    5862
+                ],
+                "ref": [
+                    5855,
+                    5856
+                ],
+                "id": [
+                    5855,
+                    5856
+                ],
+                "bi": "default"
+            },
+            {
+                "type": [
+                    5859,
+                    5862
+                ],
+                "ref": [
+                    5857,
+                    5858
+                ],
+                "id": [
+                    5857,
+                    5858
+                ],
+                "bi": "default"
+            }
+        ],
+        "name": [
+            "Section_4_1",
+            "Int",
+            "neg_eq"
+        ],
+        "modifiers": null,
+        "kind": "theorem",
+        "id": {
+            "range": [
+                5843,
+                5853
+            ],
+            "original": true
+        }
+    },
+    {
+        "value": {
+            "range": [
+                5938,
+                5944
+            ],
+            "original": true
+        },
+        "type": {
+            "range": [
+                5911,
+                5937
+            ],
+            "original": true
+        },
+        "signature": {
+            "range": [
+                5909,
+                5937
+            ],
+            "pp": " : -(3 —— 5) = 5 —— 3",
+            "original": true
+        },
+        "scopeInfo": {
+            "varDecls": [],
+            "scopedOpenDecl": [
+                [
+                    "Section_4_1"
+                ]
+            ],
+            "openDecl": [],
+            "omitVars": [],
+            "levelNames": [],
+            "includeVars": [],
+            "currNamespace": [
+                "Section_4_1"
+            ]
+        },
+        "ref": {
+            "range": [
+                5901,
+                5944
+            ],
+            "pp": "example : -(3 —— 5) = 5 —— 3 :=\n  rfl",
+            "original": true
+        },
+        "params": [],
+        "name": [
+            "Section_4_1",
+            "_example"
+        ],
+        "modifiers": null,
+        "kind": "example",
+        "id": {
+            "range": [
+                5901,
+                5908
+            ],
+            "original": false
+        }
+    },
+    {
+        "value": {
+            "range": [
+                5978,
+                6009
+            ],
+            "original": true
+        },
+        "type": {
+            "range": [
+                5973,
+                5977
+            ],
+            "original": true
+        },
+        "signature": {
+            "range": [
+                5963,
+                5977
+            ],
+            "pp": " (x : Int) : Prop",
+            "original": true
+        },
+        "scopeInfo": {
+            "varDecls": [],
+            "scopedOpenDecl": [
+                [
+                    "Section_4_1",
+                    "Int"
+                ],
+                [
+                    "Section_4_1"
+                ]
+            ],
+            "openDecl": [],
+            "omitVars": [],
+            "levelNames": [],
+            "includeVars": [],
+            "currNamespace": [
+                "Section_4_1",
+                "Int"
+            ]
+        },
+        "ref": {
+            "range": [
+                5946,
+                6009
+            ],
+            "pp": "abbrev IsPos (x : Int) : Prop :=\n  ∃ (n : ℕ), n > 0 ∧ x = n",
+            "original": true
+        },
+        "params": [
+            {
+                "type": [
+                    5966,
+                    5969
+                ],
+                "ref": [
+                    5964,
+                    5965
+                ],
+                "id": [
+                    5964,
+                    5965
+                ],
+                "bi": "default"
+            }
+        ],
+        "name": [
+            "Section_4_1",
+            "Int",
+            "IsPos"
+        ],
+        "modifiers": null,
+        "kind": "abbrev",
+        "id": {
+            "range": [
+                5953,
+                5962
+            ],
+            "original": true
+        }
+    },
+    {
+        "value": {
+            "range": [
+                6042,
+                6074
+            ],
+            "original": true
+        },
+        "type": {
+            "range": [
+                6037,
+                6041
+            ],
+            "original": true
+        },
+        "signature": {
+            "range": [
+                6027,
+                6041
+            ],
+            "pp": " (x : Int) : Prop",
+            "original": true
+        },
+        "scopeInfo": {
+            "varDecls": [],
+            "scopedOpenDecl": [
+                [
+                    "Section_4_1",
+                    "Int"
+                ],
+                [
+                    "Section_4_1"
+                ]
+            ],
+            "openDecl": [],
+            "omitVars": [],
+            "levelNames": [],
+            "includeVars": [],
+            "currNamespace": [
+                "Section_4_1",
+                "Int"
+            ]
+        },
+        "ref": {
+            "range": [
+                6010,
+                6074
+            ],
+            "pp": "abbrev IsNeg (x : Int) : Prop :=\n  ∃ (n : ℕ), n > 0 ∧ x = -n",
+            "original": true
+        },
+        "params": [
+            {
+                "type": [
+                    6030,
+                    6033
+                ],
+                "ref": [
+                    6028,
+                    6029
+                ],
+                "id": [
+                    6028,
+                    6029
+                ],
+                "bi": "default"
+            }
+        ],
+        "name": [
+            "Section_4_1",
+            "Int",
+            "IsNeg"
+        ],
+        "modifiers": null,
+        "kind": "abbrev",
+        "id": {
+            "range": [
+                6017,
+                6026
+            ],
+            "original": true
+        }
+    },
+    {
+        "value": {
+            "range": [
+                6185,
+                6714
+            ],
+            "original": true
+        },
+        "type": {
+            "range": [
+                6155,
+                6184
+            ],
+            "original": true
+        },
+        "signature": {
+            "range": [
+                6145,
+                6184
+            ],
+            "pp": " (x : Int) : x = 0 ∨ x.IsPos ∨ x.IsNeg",
+            "original": true
+        },
+        "scopeInfo": {
+            "varDecls": [],
+            "scopedOpenDecl": [
+                [
+                    "Section_4_1",
+                    "Int"
+                ],
+                [
+                    "Section_4_1"
+                ]
+            ],
+            "openDecl": [],
+            "omitVars": [],
+            "levelNames": [],
+            "includeVars": [],
+            "currNamespace": [
+                "Section_4_1",
+                "Int"
+            ]
+        },
+        "ref": {
+            "range": [
+                6076,
+                6714
+            ],
+            "pp": "/-- Lemma 4.1.5 (trichotomy of integers )-/\ntheorem trichotomous (x : Int) : x = 0 ∨ x.IsPos ∨ x.IsNeg := by\n  -- This proof is slightly modified from that in the original text.\n  \n  obtain ⟨a, b, rfl⟩ := eq_diff x\n  obtain h_lt | rfl | h_gt := _root_.trichotomous (r := LT.lt) a b\n  . obtain ⟨c, rfl⟩ := Nat.exists_eq_add_of_lt h_lt\n    right; right; refine ⟨c + 1, by linarith, ?_⟩\n    simp_rw [natCast_eq, neg_eq, eq]; abel\n  . left; simp_rw [ofNat_eq, eq, add_zero, zero_add]\n  obtain ⟨c, rfl⟩ := Nat.exists_eq_add_of_lt h_gt\n  right; left; refine ⟨c + 1, by linarith, ?_⟩\n  simp_rw [natCast_eq, eq]; abel",
+            "original": true
+        },
+        "params": [
+            {
+                "type": [
+                    6148,
+                    6151
+                ],
+                "ref": [
+                    6146,
+                    6147
+                ],
+                "id": [
+                    6146,
+                    6147
+                ],
+                "bi": "default"
+            }
+        ],
+        "name": [
+            "Section_4_1",
+            "Int",
+            "trichotomous"
+        ],
+        "modifiers": null,
+        "kind": "theorem",
+        "id": {
+            "range": [
+                6128,
+                6144
+            ],
+            "original": true
+        }
+    },
+    {
+        "value": {
+            "range": [
+                6822,
+                6894
+            ],
+            "original": true
+        },
+        "type": {
+            "range": [
+                6794,
+                6821
+            ],
+            "original": true
+        },
+        "signature": {
+            "range": [
+                6784,
+                6821
+            ],
+            "pp": " (x : Int) : x = 0 ∧ x.IsPos → False",
+            "original": true
+        },
+        "scopeInfo": {
+            "varDecls": [],
+            "scopedOpenDecl": [
+                [
+                    "Section_4_1",
+                    "Int"
+                ],
+                [
+                    "Section_4_1"
+                ]
+            ],
+            "openDecl": [],
+            "omitVars": [],
+            "levelNames": [],
+            "includeVars": [],
+            "currNamespace": [
+                "Section_4_1",
+                "Int"
+            ]
+        },
+        "ref": {
+            "range": [
+                6716,
+                6894
+            ],
+            "pp": "/-- Lemma 4.1.5 (trichotomy of integers)-/\ntheorem not_pos_zero (x : Int) : x = 0 ∧ x.IsPos → False := by rintro ⟨rfl, ⟨n, _, _⟩⟩; simp_all [← natCast_ofNat]",
+            "original": true
+        },
+        "params": [
+            {
+                "type": [
+                    6787,
+                    6790
+                ],
+                "ref": [
+                    6785,
+                    6786
+                ],
+                "id": [
+                    6785,
+                    6786
+                ],
+                "bi": "default"
+            }
+        ],
+        "name": [
+            "Section_4_1",
+            "Int",
+            "not_pos_zero"
+        ],
+        "modifiers": null,
+        "kind": "theorem",
+        "id": {
+            "range": [
+                6767,
+                6783
+            ],
+            "original": true
+        }
+    },
+    {
+        "value": {
+            "range": [
+                7002,
+                7115
+            ],
+            "original": true
+        },
+        "type": {
+            "range": [
+                6974,
+                7001
+            ],
+            "original": true
+        },
+        "signature": {
+            "range": [
+                6964,
+                7001
+            ],
+            "pp": " (x : Int) : x = 0 ∧ x.IsNeg → False",
+            "original": true
+        },
+        "scopeInfo": {
+            "varDecls": [],
+            "scopedOpenDecl": [
+                [
+                    "Section_4_1",
+                    "Int"
+                ],
+                [
+                    "Section_4_1"
+                ]
+            ],
+            "openDecl": [],
+            "omitVars": [],
+            "levelNames": [],
+            "includeVars": [],
+            "currNamespace": [
+                "Section_4_1",
+                "Int"
+            ]
+        },
+        "ref": {
+            "range": [
+                6896,
+                7115
+            ],
+            "pp": "/-- Lemma 4.1.5 (trichotomy of integers)-/\ntheorem not_neg_zero (x : Int) : x = 0 ∧ x.IsNeg → False :=\n  by\n  rintro ⟨rfl, ⟨n, _, hn⟩⟩; simp_rw [← natCast_ofNat, natCast_eq, neg_eq, eq] at hn\n  linarith",
+            "original": true
+        },
+        "params": [
+            {
+                "type": [
+                    6967,
+                    6970
+                ],
+                "ref": [
+                    6965,
+                    6966
+                ],
+                "id": [
+                    6965,
+                    6966
+                ],
+                "bi": "default"
+            }
+        ],
+        "name": [
+            "Section_4_1",
+            "Int",
+            "not_neg_zero"
+        ],
+        "modifiers": null,
+        "kind": "theorem",
+        "id": {
+            "range": [
+                6947,
+                6963
+            ],
+            "original": true
+        }
+    },
+    {
+        "value": {
+            "range": [
+                7224,
+                7333
+            ],
+            "original": true
+        },
+        "type": {
+            "range": [
+                7194,
+                7223
+            ],
+            "original": true
+        },
+        "signature": {
+            "range": [
+                7184,
+                7223
+            ],
+            "pp": " (x : Int) : x.IsPos ∧ x.IsNeg → False",
+            "original": true
+        },
+        "scopeInfo": {
+            "varDecls": [],
+            "scopedOpenDecl": [
+                [
+                    "Section_4_1",
+                    "Int"
+                ],
+                [
+                    "Section_4_1"
+                ]
+            ],
+            "openDecl": [],
+            "omitVars": [],
+            "levelNames": [],
+            "includeVars": [],
+            "currNamespace": [
+                "Section_4_1",
+                "Int"
+            ]
+        },
+        "ref": {
+            "range": [
+                7117,
+                7333
+            ],
+            "pp": "/-- Lemma 4.1.5 (trichotomy of integers)-/\ntheorem not_pos_neg (x : Int) : x.IsPos ∧ x.IsNeg → False :=\n  by\n  rintro ⟨⟨n, _, rfl⟩, ⟨m, _, hm⟩⟩; simp_rw [natCast_eq, neg_eq, eq] at hm\n  linarith",
+            "original": true
+        },
+        "params": [
+            {
+                "type": [
+                    7187,
+                    7190
+                ],
+                "ref": [
+                    7185,
+                    7186
+                ],
+                "id": [
+                    7185,
+                    7186
+                ],
+                "bi": "default"
+            }
+        ],
+        "name": [
+            "Section_4_1",
+            "Int",
+            "not_pos_neg"
+        ],
+        "modifiers": null,
+        "kind": "theorem",
+        "id": {
+            "range": [
+                7168,
+                7183
+            ],
+            "original": true
+        }
+    },
+    {
+        "value": {
+            "range": [
+                7436,
+                7495
+            ],
+            "original": true
+        },
+        "type": {
+            "range": [
+                7423,
+                7435
+            ],
+            "original": true
+        },
+        "signature": {
+            "range": [
+                7421,
+                7435
+            ],
+            "pp": " : AddGroup Int",
+            "original": true
+        },
+        "scopeInfo": {
+            "varDecls": [],
+            "scopedOpenDecl": [
+                [
+                    "Section_4_1",
+                    "Int"
+                ],
+                [
+                    "Section_4_1"
+                ]
+            ],
+            "openDecl": [],
+            "omitVars": [],
+            "levelNames": [],
+            "includeVars": [],
+            "currNamespace": [
+                "Section_4_1",
+                "Int"
+            ]
+        },
+        "ref": {
+            "range": [
+                7335,
+                7495
+            ],
+            "pp": "/-- Proposition 4.1.6 (laws of algebra) / Exercise 4.1.4 -/\ninstance instAddGroup : AddGroup Int :=\n  AddGroup.ofLeftAxioms (by sorry) (by sorry) (by sorry)",
+            "original": true
+        },
+        "params": [],
+        "name": [
+            "Section_4_1",
+            "Int",
+            "instAddGroup"
+        ],
+        "modifiers": null,
+        "kind": "instance",
+        "id": {
+            "range": [
+                7404,
+                7420
+            ],
+            "original": true
+        }
+    },
+    {
+        "value": {
+            "range": [
+                7606,
+                7634
+            ],
+            "original": true
+        },
+        "type": {
+            "range": [
+                7589,
+                7605
+            ],
+            "original": true
+        },
+        "signature": {
+            "range": [
+                7587,
+                7605
+            ],
+            "pp": " : AddCommGroup Int",
+            "original": true
+        },
+        "scopeInfo": {
+            "varDecls": [],
+            "scopedOpenDecl": [
+                [
+                    "Section_4_1",
+                    "Int"
+                ],
+                [
+                    "Section_4_1"
+                ]
+            ],
+            "openDecl": [],
+            "omitVars": [],
+            "levelNames": [],
+            "includeVars": [],
+            "currNamespace": [
+                "Section_4_1",
+                "Int"
+            ]
+        },
+        "ref": {
+            "range": [
+                7497,
+                7634
+            ],
+            "pp": "/-- Proposition 4.1.6 (laws of algebra) / Exercise 4.1.4 -/\ninstance instAddCommGroup : AddCommGroup Int where add_comm := by sorry",
+            "original": true
+        },
+        "params": [],
+        "name": [
+            "Section_4_1",
+            "Int",
+            "instAddCommGroup"
+        ],
+        "modifiers": null,
+        "kind": "instance",
+        "id": {
+            "range": [
+                7566,
+                7586
+            ],
+            "original": true
+        }
+    },
+    {
+        "value": {
+            "range": [
+                7741,
+                8087
+            ],
+            "original": true
+        },
+        "type": {
+            "range": [
+                7726,
+                7740
+            ],
+            "original": true
+        },
+        "signature": {
+            "range": [
+                7724,
+                7740
+            ],
+            "pp": " : CommMonoid Int",
+            "original": true
+        },
+        "scopeInfo": {
+            "varDecls": [],
+            "scopedOpenDecl": [
+                [
+                    "Section_4_1",
+                    "Int"
+                ],
+                [
+                    "Section_4_1"
+                ]
+            ],
+            "openDecl": [],
+            "omitVars": [],
+            "levelNames": [],
+            "includeVars": [],
+            "currNamespace": [
+                "Section_4_1",
+                "Int"
+            ]
+        },
+        "ref": {
+            "range": [
+                7636,
+                8087
+            ],
+            "pp": "/-- Proposition 4.1.6 (laws of algebra) / Exercise 4.1.4 -/\ninstance instCommMonoid : CommMonoid Int where\n  mul_comm := by sorry\n  mul_assoc := by\n    -- This proof is written to follow the structure of the original text.\n    \n    intro x y z\n    obtain ⟨a, b, rfl⟩ := eq_diff x\n    obtain ⟨c, d, rfl⟩ := eq_diff y\n    obtain ⟨e, f, rfl⟩ := eq_diff z\n    simp_rw [mul_eq]; congr 1 <;> ring\n  one_mul := by sorry\n  mul_one := by sorry",
+            "original": true
+        },
+        "params": [],
+        "name": [
+            "Section_4_1",
+            "Int",
+            "instCommMonoid"
+        ],
+        "modifiers": null,
+        "kind": "instance",
+        "id": {
+            "range": [
+                7705,
+                7723
+            ],
+            "original": true
+        }
+    },
+    {
+        "value": {
+            "range": [
+                8190,
+                8296
+            ],
+            "original": true
+        },
+        "type": {
+            "range": [
+                8177,
+                8189
+            ],
+            "original": true
+        },
+        "signature": {
+            "range": [
+                8175,
+                8189
+            ],
+            "pp": " : CommRing Int",
+            "original": true
+        },
+        "scopeInfo": {
+            "varDecls": [],
+            "scopedOpenDecl": [
+                [
+                    "Section_4_1",
+                    "Int"
+                ],
+                [
+                    "Section_4_1"
+                ]
+            ],
+            "openDecl": [],
+            "omitVars": [],
+            "levelNames": [],
+            "includeVars": [],
+            "currNamespace": [
+                "Section_4_1",
+                "Int"
+            ]
+        },
+        "ref": {
+            "range": [
+                8089,
+                8296
+            ],
+            "pp": "/-- Proposition 4.1.6 (laws of algebra) / Exercise 4.1.4 -/\ninstance instCommRing : CommRing Int where\n  left_distrib := by sorry\n  right_distrib := by sorry\n  zero_mul := by sorry\n  mul_zero := by sorry",
+            "original": true
+        },
+        "params": [],
+        "name": [
+            "Section_4_1",
+            "Int",
+            "instCommRing"
+        ],
+        "modifiers": null,
+        "kind": "instance",
+        "id": {
+            "range": [
+                8158,
+                8174
+            ],
+            "original": true
+        }
+    },
+    {
+        "value": {
+            "range": [
+                8379,
+                8388
+            ],
+            "original": true
+        },
+        "type": {
+            "range": [
+                8362,
+                8378
+            ],
+            "original": true
+        },
+        "signature": {
+            "range": [
+                8350,
+                8378
+            ],
+            "pp": " (a b : Int) : a - b = a + (-b)",
+            "original": true
+        },
+        "scopeInfo": {
+            "varDecls": [],
+            "scopedOpenDecl": [
+                [
+                    "Section_4_1",
+                    "Int"
+                ],
+                [
+                    "Section_4_1"
+                ]
+            ],
+            "openDecl": [],
+            "omitVars": [],
+            "levelNames": [],
+            "includeVars": [],
+            "currNamespace": [
+                "Section_4_1",
+                "Int"
+            ]
+        },
+        "ref": {
+            "range": [
+                8298,
+                8388
+            ],
+            "pp": "/-- Definition of subtraction -/\ntheorem sub_eq (a b : Int) : a - b = a + (-b) := by rfl",
+            "original": true
+        },
+        "params": [
+            {
+                "type": [
+                    8355,
+                    8358
+                ],
+                "ref": [
+                    8351,
+                    8352
+                ],
+                "id": [
+                    8351,
+                    8352
+                ],
+                "bi": "default"
+            },
+            {
+                "type": [
+                    8355,
+                    8358
+                ],
+                "ref": [
+                    8353,
+                    8354
+                ],
+                "id": [
+                    8353,
+                    8354
+                ],
+                "bi": "default"
+            }
+        ],
+        "name": [
+            "Section_4_1",
+            "Int",
+            "sub_eq"
+        ],
+        "modifiers": null,
+        "kind": "theorem",
+        "id": {
+            "range": [
+                8339,
+                8349
+            ],
+            "original": true
+        }
+    },
+    {
+        "value": {
+            "range": [
+                8463,
+                8474
+            ],
+            "original": true
+        },
+        "type": {
+            "range": [
+                8432,
+                8462
+            ],
+            "original": true
+        },
+        "signature": {
+            "range": [
+                8420,
+                8462
+            ],
+            "pp": " (a b : ℕ) : (a : Int) - (b : Int) = a —— b",
+            "original": true
+        },
+        "scopeInfo": {
+            "varDecls": [],
+            "scopedOpenDecl": [
+                [
+                    "Section_4_1",
+                    "Int"
+                ],
+                [
+                    "Section_4_1"
+                ]
+            ],
+            "openDecl": [],
+            "omitVars": [],
+            "levelNames": [],
+            "includeVars": [],
+            "currNamespace": [
+                "Section_4_1",
+                "Int"
+            ]
+        },
+        "ref": {
+            "range": [
+                8390,
+                8474
+            ],
+            "pp": "theorem sub_eq_formal_sub (a b : ℕ) : (a : Int) - (b : Int) = a —— b := by sorry",
+            "original": true
+        },
+        "params": [
+            {
+                "type": [
+                    8425,
+                    8428
+                ],
+                "ref": [
+                    8421,
+                    8422
+                ],
+                "id": [
+                    8421,
+                    8422
+                ],
+                "bi": "default"
+            },
+            {
+                "type": [
+                    8425,
+                    8428
+                ],
+                "ref": [
+                    8423,
+                    8424
+                ],
+                "id": [
+                    8423,
+                    8424
+                ],
+                "bi": "default"
+            }
+        ],
+        "name": [
+            "Section_4_1",
+            "Int",
+            "sub_eq_formal_sub"
+        ],
+        "modifiers": null,
+        "kind": "theorem",
+        "id": {
+            "range": [
+                8398,
+                8419
+            ],
+            "original": true
+        }
+    },
+    {
+        "value": {
+            "range": [
+                8604,
+                8615
+            ],
+            "original": true
+        },
+        "type": {
+            "range": [
+                8588,
+                8603
+            ],
+            "original": true
+        },
+        "signature": {
+            "range": [
+                8561,
+                8603
+            ],
+            "pp": " {a b : Int} (h : a * b = 0) : a = 0 ∨ b = 0",
+            "original": true
+        },
+        "scopeInfo": {
+            "varDecls": [],
+            "scopedOpenDecl": [
+                [
+                    "Section_4_1",
+                    "Int"
+                ],
+                [
+                    "Section_4_1"
+                ]
+            ],
+            "openDecl": [],
+            "omitVars": [],
+            "levelNames": [],
+            "includeVars": [],
+            "currNamespace": [
+                "Section_4_1",
+                "Int"
+            ]
+        },
+        "ref": {
+            "range": [
+                8476,
+                8615
+            ],
+            "pp": "/-- Proposition 4.1.8 (No zero divisors) / Exercise 4.1.5 -/\ntheorem mul_eq_zero {a b : Int} (h : a * b = 0) : a = 0 ∨ b = 0 := by sorry",
+            "original": true
+        },
+        "params": [
+            {
+                "type": [
+                    8566,
+                    8569
+                ],
+                "ref": [
+                    8562,
+                    8563
+                ],
+                "id": [
+                    8562,
+                    8563
+                ],
+                "bi": "implicit"
+            },
+            {
+                "type": [
+                    8566,
+                    8569
+                ],
+                "ref": [
+                    8564,
+                    8565
+                ],
+                "id": [
+                    8564,
+                    8565
+                ],
+                "bi": "implicit"
+            },
+            {
+                "type": [
+                    8575,
+                    8584
+                ],
+                "ref": [
+                    8572,
+                    8573
+                ],
+                "id": [
+                    8572,
+                    8573
+                ],
+                "bi": "default"
+            }
+        ],
+        "name": [
+            "Section_4_1",
+            "Int",
+            "mul_eq_zero"
+        ],
+        "modifiers": null,
+        "kind": "theorem",
+        "id": {
+            "range": [
+                8545,
+                8560
+            ],
+            "original": true
+        }
+    },
+    {
+        "value": {
+            "range": [
+                8757,
+                8768
+            ],
+            "original": true
+        },
+        "type": {
+            "range": [
+                8751,
+                8756
+            ],
+            "original": true
+        },
+        "signature": {
+            "range": [
+                8708,
+                8756
+            ],
+            "pp": " (a b c : Int) (h : a * c = b * c) (hc : c ≠ 0) : a = b",
+            "original": true
+        },
+        "scopeInfo": {
+            "varDecls": [],
+            "scopedOpenDecl": [
+                [
+                    "Section_4_1",
+                    "Int"
+                ],
+                [
+                    "Section_4_1"
+                ]
+            ],
+            "openDecl": [],
+            "omitVars": [],
+            "levelNames": [],
+            "includeVars": [],
+            "currNamespace": [
+                "Section_4_1",
+                "Int"
+            ]
+        },
+        "ref": {
+            "range": [
+                8617,
+                8768
+            ],
+            "pp": "/-- Corollary 4.1.9 (Cancellation law) / Exercise 4.1.6 -/\ntheorem mul_right_cancel₀ (a b c : Int) (h : a * c = b * c) (hc : c ≠ 0) : a = b := by sorry",
+            "original": true
+        },
+        "params": [
+            {
+                "type": [
+                    8715,
+                    8718
+                ],
+                "ref": [
+                    8709,
+                    8710
+                ],
+                "id": [
+                    8709,
+                    8710
+                ],
+                "bi": "default"
+            },
+            {
+                "type": [
+                    8715,
+                    8718
+                ],
+                "ref": [
+                    8711,
+                    8712
+                ],
+                "id": [
+                    8711,
+                    8712
+                ],
+                "bi": "default"
+            },
+            {
+                "type": [
+                    8715,
+                    8718
+                ],
+                "ref": [
+                    8713,
+                    8714
+                ],
+                "id": [
+                    8713,
+                    8714
+                ],
+                "bi": "default"
+            },
+            {
+                "type": [
+                    8724,
+                    8733
+                ],
+                "ref": [
+                    8721,
+                    8722
+                ],
+                "id": [
+                    8721,
+                    8722
+                ],
+                "bi": "default"
+            },
+            {
+                "type": [
+                    8740,
+                    8747
+                ],
+                "ref": [
+                    8736,
+                    8738
+                ],
+                "id": [
+                    8736,
+                    8738
+                ],
+                "bi": "default"
+            }
+        ],
+        "name": [
+            "Section_4_1",
+            "Int",
+            "mul_right_cancel₀"
+        ],
+        "modifiers": null,
+        "kind": "theorem",
+        "id": {
+            "range": [
+                8684,
+                8707
+            ],
+            "original": true
+        }
+    },
+    {
+        "value": {
+            "range": [
+                8851,
+                8889
+            ],
+            "original": true
+        },
+        "type": {
+            "range": [
+                8844,
+                8850
+            ],
+            "original": true
+        },
+        "signature": {
+            "range": [
+                8842,
+                8850
+            ],
+            "pp": " : LE Int",
+            "original": true
+        },
+        "scopeInfo": {
+            "varDecls": [],
+            "scopedOpenDecl": [
+                [
+                    "Section_4_1",
+                    "Int"
+                ],
+                [
+                    "Section_4_1"
+                ]
+            ],
+            "openDecl": [],
+            "omitVars": [],
+            "levelNames": [],
+            "includeVars": [],
+            "currNamespace": [
+                "Section_4_1",
+                "Int"
+            ]
+        },
+        "ref": {
+            "range": [
+                8770,
+                8889
+            ],
+            "pp": "/-- Definition 4.1.10 (Ordering of the integers) -/\ninstance instLE : LE Int where le n m := ∃ a : ℕ, m = n + a",
+            "original": true
+        },
+        "params": [],
+        "name": [
+            "Section_4_1",
+            "Int",
+            "instLE"
+        ],
+        "modifiers": null,
+        "kind": "instance",
+        "id": {
+            "range": [
+                8831,
+                8841
+            ],
+            "original": true
+        }
+    },
+    {
+        "value": {
+            "range": [
+                8972,
+                9009
+            ],
+            "original": true
+        },
+        "type": {
+            "range": [
+                8965,
+                8971
+            ],
+            "original": true
+        },
+        "signature": {
+            "range": [
+                8963,
+                8971
+            ],
+            "pp": " : LT Int",
+            "original": true
+        },
+        "scopeInfo": {
+            "varDecls": [],
+            "scopedOpenDecl": [
+                [
+                    "Section_4_1",
+                    "Int"
+                ],
+                [
+                    "Section_4_1"
+                ]
+            ],
+            "openDecl": [],
+            "omitVars": [],
+            "levelNames": [],
+            "includeVars": [],
+            "currNamespace": [
+                "Section_4_1",
+                "Int"
+            ]
+        },
+        "ref": {
+            "range": [
+                8891,
+                9009
+            ],
+            "pp": "/-- Definition 4.1.10 (Ordering of the integers) -/\ninstance instLT : LT Int where lt n m := n ≤ m ∧ n ≠ m",
+            "original": true
+        },
+        "params": [],
+        "name": [
+            "Section_4_1",
+            "Int",
+            "instLT"
+        ],
+        "modifiers": null,
+        "kind": "instance",
+        "id": {
+            "range": [
+                8952,
+                8962
+            ],
+            "original": true
+        }
+    },
+    {
+        "value": {
+            "range": [
+                9075,
+                9084
+            ],
+            "original": true
+        },
+        "type": {
+            "range": [
+                9042,
+                9074
+            ],
+            "original": true
+        },
+        "signature": {
+            "range": [
+                9030,
+                9074
+            ],
+            "pp": " (a b : Int) : a ≤ b ↔ ∃ t : ℕ, b = a + t",
+            "original": true
+        },
+        "scopeInfo": {
+            "varDecls": [],
+            "scopedOpenDecl": [
+                [
+                    "Section_4_1",
+                    "Int"
+                ],
+                [
+                    "Section_4_1"
+                ]
+            ],
+            "openDecl": [],
+            "omitVars": [],
+            "levelNames": [],
+            "includeVars": [],
+            "currNamespace": [
+                "Section_4_1",
+                "Int"
+            ]
+        },
+        "ref": {
+            "range": [
+                9011,
+                9084
+            ],
+            "pp": "theorem le_iff (a b : Int) : a ≤ b ↔ ∃ t : ℕ, b = a + t := by rfl",
+            "original": true
+        },
+        "params": [
+            {
+                "type": [
+                    9035,
+                    9038
+                ],
+                "ref": [
+                    9031,
+                    9032
+                ],
+                "id": [
+                    9031,
+                    9032
+                ],
+                "bi": "default"
+            },
+            {
+                "type": [
+                    9035,
+                    9038
+                ],
+                "ref": [
+                    9033,
+                    9034
+                ],
+                "id": [
+                    9033,
+                    9034
+                ],
+                "bi": "default"
+            }
+        ],
+        "name": [
+            "Section_4_1",
+            "Int",
+            "le_iff"
+        ],
+        "modifiers": null,
+        "kind": "theorem",
+        "id": {
+            "range": [
+                9019,
+                9029
+            ],
+            "original": true
+        }
+    },
+    {
+        "value": {
+            "range": [
+                9161,
+                9170
+            ],
+            "original": true
+        },
+        "type": {
+            "range": [
+                9116,
+                9160
+            ],
+            "original": true
+        },
+        "signature": {
+            "range": [
+                9105,
+                9160
+            ],
+            "pp": " (a b : Int) : a < b ↔ (∃ t : ℕ, b = a + t) ∧ a ≠ b",
+            "original": true
+        },
+        "scopeInfo": {
+            "varDecls": [],
+            "scopedOpenDecl": [
+                [
+                    "Section_4_1",
+                    "Int"
+                ],
+                [
+                    "Section_4_1"
+                ]
+            ],
+            "openDecl": [],
+            "omitVars": [],
+            "levelNames": [],
+            "includeVars": [],
+            "currNamespace": [
+                "Section_4_1",
+                "Int"
+            ]
+        },
+        "ref": {
+            "range": [
+                9086,
+                9170
+            ],
+            "pp": "theorem lt_iff (a b : Int) : a < b ↔ (∃ t : ℕ, b = a + t) ∧ a ≠ b := by rfl",
+            "original": true
+        },
+        "params": [
+            {
+                "type": [
+                    9110,
+                    9113
+                ],
+                "ref": [
+                    9106,
+                    9107
+                ],
+                "id": [
+                    9106,
+                    9107
+                ],
+                "bi": "default"
+            },
+            {
+                "type": [
+                    9110,
+                    9113
+                ],
+                "ref": [
+                    9108,
+                    9109
+                ],
+                "id": [
+                    9108,
+                    9109
+                ],
+                "bi": "default"
+            }
+        ],
+        "name": [
+            "Section_4_1",
+            "Int",
+            "lt_iff"
+        ],
+        "modifiers": null,
+        "kind": "theorem",
+        "id": {
+            "range": [
+                9094,
+                9104
+            ],
+            "original": true
+        }
+    },
+    {
+        "value": {
+            "range": [
+                9335,
+                9346
+            ],
+            "original": true
+        },
+        "type": {
+            "range": [
+                9292,
+                9334
+            ],
+            "original": true
+        },
+        "signature": {
+            "range": [
+                9280,
+                9334
+            ],
+            "pp": " (a b : Int) : a < b ↔ ∃ n : ℕ, n ≠ 0 ∧ b = a + n",
+            "original": true
+        },
+        "scopeInfo": {
+            "varDecls": [],
+            "scopedOpenDecl": [
+                [
+                    "Section_4_1",
+                    "Int"
+                ],
+                [
+                    "Section_4_1"
+                ]
+            ],
+            "openDecl": [],
+            "omitVars": [],
+            "levelNames": [],
+            "includeVars": [],
+            "currNamespace": [
+                "Section_4_1",
+                "Int"
+            ]
+        },
+        "ref": {
+            "range": [
+                9172,
+                9346
+            ],
+            "pp": "/-- Lemma 4.1.11(a) (Properties of order) / Exercise 4.1.7 -/\ntheorem lt_iff_exists_positive_difference (a b : Int) : a < b ↔ ∃ n : ℕ, n ≠ 0 ∧ b = a + n := by sorry",
+            "original": true
+        },
+        "params": [
+            {
+                "type": [
+                    9285,
+                    9288
+                ],
+                "ref": [
+                    9281,
+                    9282
+                ],
+                "id": [
+                    9281,
+                    9282
+                ],
+                "bi": "default"
+            },
+            {
+                "type": [
+                    9285,
+                    9288
+                ],
+                "ref": [
+                    9283,
+                    9284
+                ],
+                "id": [
+                    9283,
+                    9284
+                ],
+                "bi": "default"
+            }
+        ],
+        "name": [
+            "Section_4_1",
+            "Int",
+            "lt_iff_exists_positive_difference"
+        ],
+        "modifiers": null,
+        "kind": "theorem",
+        "id": {
+            "range": [
+                9242,
+                9279
+            ],
+            "original": true
+        }
+    },
+    {
+        "value": {
+            "range": [
+                9485,
+                9496
+            ],
+            "original": true
+        },
+        "type": {
+            "range": [
+                9475,
+                9484
+            ],
+            "original": true
+        },
+        "signature": {
+            "range": [
+                9444,
+                9484
+            ],
+            "pp": " {a b : Int} (c : Int) (h : a < b) : a + c < b + c",
+            "original": true
+        },
+        "scopeInfo": {
+            "varDecls": [],
+            "scopedOpenDecl": [
+                [
+                    "Section_4_1",
+                    "Int"
+                ],
+                [
+                    "Section_4_1"
+                ]
+            ],
+            "openDecl": [],
+            "omitVars": [],
+            "levelNames": [],
+            "includeVars": [],
+            "currNamespace": [
+                "Section_4_1",
+                "Int"
+            ]
+        },
+        "ref": {
+            "range": [
+                9348,
+                9496
+            ],
+            "pp": "/-- Lemma 4.1.11(b) (Addition preserves order) / Exercise 4.1.7 -/\ntheorem add_lt_add_right {a b : Int} (c : Int) (h : a < b) : a + c < b + c := by sorry",
+            "original": true
+        },
+        "params": [
+            {
+                "type": [
+                    9449,
+                    9452
+                ],
+                "ref": [
+                    9445,
+                    9446
+                ],
+                "id": [
+                    9445,
+                    9446
+                ],
+                "bi": "implicit"
+            },
+            {
+                "type": [
+                    9449,
+                    9452
+                ],
+                "ref": [
+                    9447,
+                    9448
+                ],
+                "id": [
+                    9447,
+                    9448
+                ],
+                "bi": "implicit"
+            },
+            {
+                "type": [
+                    9457,
+                    9460
+                ],
+                "ref": [
+                    9455,
+                    9456
+                ],
+                "id": [
+                    9455,
+                    9456
+                ],
+                "bi": "default"
+            },
+            {
+                "type": [
+                    9466,
+                    9471
+                ],
+                "ref": [
+                    9463,
+                    9464
+                ],
+                "id": [
+                    9463,
+                    9464
+                ],
+                "bi": "default"
+            }
+        ],
+        "name": [
+            "Section_4_1",
+            "Int",
+            "add_lt_add_right"
+        ],
+        "modifiers": null,
+        "kind": "theorem",
+        "id": {
+            "range": [
+                9423,
+                9443
+            ],
+            "original": true
+        }
+    },
+    {
+        "value": {
+            "range": [
+                9666,
+                9677
+            ],
+            "original": true
+        },
+        "type": {
+            "range": [
+                9656,
+                9665
+            ],
+            "original": true
+        },
+        "signature": {
+            "range": [
+                9616,
+                9665
+            ],
+            "pp": " {a b c : Int} (hab : a < b) (hc : 0 < c) : a * c < b * c",
+            "original": true
+        },
+        "scopeInfo": {
+            "varDecls": [],
+            "scopedOpenDecl": [
+                [
+                    "Section_4_1",
+                    "Int"
+                ],
+                [
+                    "Section_4_1"
+                ]
+            ],
+            "openDecl": [],
+            "omitVars": [],
+            "levelNames": [],
+            "includeVars": [],
+            "currNamespace": [
+                "Section_4_1",
+                "Int"
+            ]
+        },
+        "ref": {
+            "range": [
+                9498,
+                9677
+            ],
+            "pp": "/-- Lemma 4.1.11(c) (Positive multiplication preserves order) / Exercise 4.1.7 -/\ntheorem mul_lt_mul_of_pos_right {a b c : Int} (hab : a < b) (hc : 0 < c) : a * c < b * c := by sorry",
+            "original": true
+        },
+        "params": [
+            {
+                "type": [
+                    9623,
+                    9626
+                ],
+                "ref": [
+                    9617,
+                    9618
+                ],
+                "id": [
+                    9617,
+                    9618
+                ],
+                "bi": "implicit"
+            },
+            {
+                "type": [
+                    9623,
+                    9626
+                ],
+                "ref": [
+                    9619,
+                    9620
+                ],
+                "id": [
+                    9619,
+                    9620
+                ],
+                "bi": "implicit"
+            },
+            {
+                "type": [
+                    9623,
+                    9626
+                ],
+                "ref": [
+                    9621,
+                    9622
+                ],
+                "id": [
+                    9621,
+                    9622
+                ],
+                "bi": "implicit"
+            },
+            {
+                "type": [
+                    9635,
+                    9640
+                ],
+                "ref": [
+                    9629,
+                    9632
+                ],
+                "id": [
+                    9629,
+                    9632
+                ],
+                "bi": "default"
+            },
+            {
+                "type": [
+                    9647,
+                    9652
+                ],
+                "ref": [
+                    9643,
+                    9645
+                ],
+                "id": [
+                    9643,
+                    9645
+                ],
+                "bi": "default"
+            }
+        ],
+        "name": [
+            "Section_4_1",
+            "Int",
+            "mul_lt_mul_of_pos_right"
+        ],
+        "modifiers": null,
+        "kind": "theorem",
+        "id": {
+            "range": [
+                9588,
+                9615
+            ],
+            "original": true
+        }
+    },
+    {
+        "value": {
+            "range": [
+                9799,
+                9810
+            ],
+            "original": true
+        },
+        "type": {
+            "range": [
+                9791,
+                9798
+            ],
+            "original": true
+        },
+        "signature": {
+            "range": [
+                9768,
+                9798
+            ],
+            "pp": " {a b : Int} (h : b < a) : -a < -b",
+            "original": true
+        },
+        "scopeInfo": {
+            "varDecls": [],
+            "scopedOpenDecl": [
+                [
+                    "Section_4_1",
+                    "Int"
+                ],
+                [
+                    "Section_4_1"
+                ]
+            ],
+            "openDecl": [],
+            "omitVars": [],
+            "levelNames": [],
+            "includeVars": [],
+            "currNamespace": [
+                "Section_4_1",
+                "Int"
+            ]
+        },
+        "ref": {
+            "range": [
+                9679,
+                9810
+            ],
+            "pp": "/-- Lemma 4.1.11(d) (Negation reverses order) / Exercise 4.1.7 -/\ntheorem neg_gt_neg {a b : Int} (h : b < a) : -a < -b := by sorry",
+            "original": true
+        },
+        "params": [
+            {
+                "type": [
+                    9773,
+                    9776
+                ],
+                "ref": [
+                    9769,
+                    9770
+                ],
+                "id": [
+                    9769,
+                    9770
+                ],
+                "bi": "implicit"
+            },
+            {
+                "type": [
+                    9773,
+                    9776
+                ],
+                "ref": [
+                    9771,
+                    9772
+                ],
+                "id": [
+                    9771,
+                    9772
+                ],
+                "bi": "implicit"
+            },
+            {
+                "type": [
+                    9782,
+                    9787
+                ],
+                "ref": [
+                    9779,
+                    9780
+                ],
+                "id": [
+                    9779,
+                    9780
+                ],
+                "bi": "default"
+            }
+        ],
+        "name": [
+            "Section_4_1",
+            "Int",
+            "neg_gt_neg"
+        ],
+        "modifiers": null,
+        "kind": "theorem",
+        "id": {
+            "range": [
+                9753,
+                9767
+            ],
+            "original": true
+        }
+    },
+    {
+        "value": {
+            "range": [
+                9936,
+                9947
+            ],
+            "original": true
+        },
+        "type": {
+            "range": [
+                9926,
+                9935
+            ],
+            "original": true
+        },
+        "signature": {
+            "range": [
+                9901,
+                9935
+            ],
+            "pp": " {a b : Int} (h : b ≤ a) : -a ≤ -b",
+            "original": true
+        },
+        "scopeInfo": {
+            "varDecls": [],
+            "scopedOpenDecl": [
+                [
+                    "Section_4_1",
+                    "Int"
+                ],
+                [
+                    "Section_4_1"
+                ]
+            ],
+            "openDecl": [],
+            "omitVars": [],
+            "levelNames": [],
+            "includeVars": [],
+            "currNamespace": [
+                "Section_4_1",
+                "Int"
+            ]
+        },
+        "ref": {
+            "range": [
+                9812,
+                9947
+            ],
+            "pp": "/-- Lemma 4.1.11(d) (Negation reverses order) / Exercise 4.1.7 -/\ntheorem neg_ge_neg {a b : Int} (h : b ≤ a) : -a ≤ -b := by sorry",
+            "original": true
+        },
+        "params": [
+            {
+                "type": [
+                    9906,
+                    9909
+                ],
+                "ref": [
+                    9902,
+                    9903
+                ],
+                "id": [
+                    9902,
+                    9903
+                ],
+                "bi": "implicit"
+            },
+            {
+                "type": [
+                    9906,
+                    9909
+                ],
+                "ref": [
+                    9904,
+                    9905
+                ],
+                "id": [
+                    9904,
+                    9905
+                ],
+                "bi": "implicit"
+            },
+            {
+                "type": [
+                    9915,
+                    9922
+                ],
+                "ref": [
+                    9912,
+                    9913
+                ],
+                "id": [
+                    9912,
+                    9913
+                ],
+                "bi": "default"
+            }
+        ],
+        "name": [
+            "Section_4_1",
+            "Int",
+            "neg_ge_neg"
+        ],
+        "modifiers": null,
+        "kind": "theorem",
+        "id": {
+            "range": [
+                9886,
+                9900
+            ],
+            "original": true
+        }
+    },
+    {
+        "value": {
+            "range": [
+                10078,
+                10089
+            ],
+            "original": true
+        },
+        "type": {
+            "range": [
+                10072,
+                10077
+            ],
+            "original": true
+        },
+        "signature": {
+            "range": [
+                10032,
+                10077
+            ],
+            "pp": " {a b c : Int} (hab : a < b) (hbc : b < c) : a < c",
+            "original": true
+        },
+        "scopeInfo": {
+            "varDecls": [],
+            "scopedOpenDecl": [
+                [
+                    "Section_4_1",
+                    "Int"
+                ],
+                [
+                    "Section_4_1"
+                ]
+            ],
+            "openDecl": [],
+            "omitVars": [],
+            "levelNames": [],
+            "includeVars": [],
+            "currNamespace": [
+                "Section_4_1",
+                "Int"
+            ]
+        },
+        "ref": {
+            "range": [
+                9949,
+                10089
+            ],
+            "pp": "/-- Lemma 4.1.11(e) (Order is transitive) / Exercise 4.1.7 -/\ntheorem lt_trans {a b c : Int} (hab : a < b) (hbc : b < c) : a < c := by sorry",
+            "original": true
+        },
+        "params": [
+            {
+                "type": [
+                    10039,
+                    10042
+                ],
+                "ref": [
+                    10033,
+                    10034
+                ],
+                "id": [
+                    10033,
+                    10034
+                ],
+                "bi": "implicit"
+            },
+            {
+                "type": [
+                    10039,
+                    10042
+                ],
+                "ref": [
+                    10035,
+                    10036
+                ],
+                "id": [
+                    10035,
+                    10036
+                ],
+                "bi": "implicit"
+            },
+            {
+                "type": [
+                    10039,
+                    10042
+                ],
+                "ref": [
+                    10037,
+                    10038
+                ],
+                "id": [
+                    10037,
+                    10038
+                ],
+                "bi": "implicit"
+            },
+            {
+                "type": [
+                    10050,
+                    10055
+                ],
+                "ref": [
+                    10045,
+                    10048
+                ],
+                "id": [
+                    10045,
+                    10048
+                ],
+                "bi": "default"
+            },
+            {
+                "type": [
+                    10063,
+                    10068
+                ],
+                "ref": [
+                    10058,
+                    10061
+                ],
+                "id": [
+                    10058,
+                    10061
+                ],
+                "bi": "default"
+            }
+        ],
+        "name": [
+            "Section_4_1",
+            "Int",
+            "lt_trans"
+        ],
+        "modifiers": null,
+        "kind": "theorem",
+        "id": {
+            "range": [
+                10019,
+                10031
+            ],
+            "original": true
+        }
+    },
+    {
+        "value": {
+            "range": [
+                10214,
+                10225
+            ],
+            "original": true
+        },
+        "type": {
+            "range": [
+                10188,
+                10213
+            ],
+            "original": true
+        },
+        "signature": {
+            "range": [
+                10176,
+                10213
+            ],
+            "pp": " (a b : Int) : a > b ∨ a < b ∨ a = b",
+            "original": true
+        },
+        "scopeInfo": {
+            "varDecls": [],
+            "scopedOpenDecl": [
+                [
+                    "Section_4_1",
+                    "Int"
+                ],
+                [
+                    "Section_4_1"
+                ]
+            ],
+            "openDecl": [],
+            "omitVars": [],
+            "levelNames": [],
+            "includeVars": [],
+            "currNamespace": [
+                "Section_4_1",
+                "Int"
+            ]
+        },
+        "ref": {
+            "range": [
+                10091,
+                10225
+            ],
+            "pp": "/-- Lemma 4.1.11(f) (Order trichotomy) / Exercise 4.1.7 -/\ntheorem trichotomous' (a b : Int) : a > b ∨ a < b ∨ a = b := by sorry",
+            "original": true
+        },
+        "params": [
+            {
+                "type": [
+                    10181,
+                    10184
+                ],
+                "ref": [
+                    10177,
+                    10178
+                ],
+                "id": [
+                    10177,
+                    10178
+                ],
+                "bi": "default"
+            },
+            {
+                "type": [
+                    10181,
+                    10184
+                ],
+                "ref": [
+                    10179,
+                    10180
+                ],
+                "id": [
+                    10179,
+                    10180
+                ],
+                "bi": "default"
+            }
+        ],
+        "name": [
+            "Section_4_1",
+            "Int",
+            "trichotomous'"
+        ],
+        "modifiers": null,
+        "kind": "theorem",
+        "id": {
+            "range": [
+                10158,
+                10175
+            ],
+            "original": true
+        }
+    },
+    {
+        "value": {
+            "range": [
+                10344,
+                10355
+            ],
+            "original": true
+        },
+        "type": {
+            "range": [
+                10324,
+                10344
+            ],
+            "original": true
+        },
+        "signature": {
+            "range": [
+                10312,
+                10344
+            ],
+            "pp": " (a b : Int) : ¬(a > b ∧ a < b)",
+            "original": true
+        },
+        "scopeInfo": {
+            "varDecls": [],
+            "scopedOpenDecl": [
+                [
+                    "Section_4_1",
+                    "Int"
+                ],
+                [
+                    "Section_4_1"
+                ]
+            ],
+            "openDecl": [],
+            "omitVars": [],
+            "levelNames": [],
+            "includeVars": [],
+            "currNamespace": [
+                "Section_4_1",
+                "Int"
+            ]
+        },
+        "ref": {
+            "range": [
+                10227,
+                10355
+            ],
+            "pp": "/-- Lemma 4.1.11(f) (Order trichotomy) / Exercise 4.1.7 -/\ntheorem not_gt_and_lt (a b : Int) : ¬(a > b ∧ a < b) := by sorry",
+            "original": true
+        },
+        "params": [
+            {
+                "type": [
+                    10317,
+                    10320
+                ],
+                "ref": [
+                    10313,
+                    10314
+                ],
+                "id": [
+                    10313,
+                    10314
+                ],
+                "bi": "default"
+            },
+            {
+                "type": [
+                    10317,
+                    10320
+                ],
+                "ref": [
+                    10315,
+                    10316
+                ],
+                "id": [
+                    10315,
+                    10316
+                ],
+                "bi": "default"
+            }
+        ],
+        "name": [
+            "Section_4_1",
+            "Int",
+            "not_gt_and_lt"
+        ],
+        "modifiers": null,
+        "kind": "theorem",
+        "id": {
+            "range": [
+                10294,
+                10311
+            ],
+            "original": true
+        }
+    },
+    {
+        "value": {
+            "range": [
+                10474,
+                10485
+            ],
+            "original": true
+        },
+        "type": {
+            "range": [
+                10454,
+                10474
+            ],
+            "original": true
+        },
+        "signature": {
+            "range": [
+                10442,
+                10474
+            ],
+            "pp": " (a b : Int) : ¬(a > b ∧ a = b)",
+            "original": true
+        },
+        "scopeInfo": {
+            "varDecls": [],
+            "scopedOpenDecl": [
+                [
+                    "Section_4_1",
+                    "Int"
+                ],
+                [
+                    "Section_4_1"
+                ]
+            ],
+            "openDecl": [],
+            "omitVars": [],
+            "levelNames": [],
+            "includeVars": [],
+            "currNamespace": [
+                "Section_4_1",
+                "Int"
+            ]
+        },
+        "ref": {
+            "range": [
+                10357,
+                10485
+            ],
+            "pp": "/-- Lemma 4.1.11(f) (Order trichotomy) / Exercise 4.1.7 -/\ntheorem not_gt_and_eq (a b : Int) : ¬(a > b ∧ a = b) := by sorry",
+            "original": true
+        },
+        "params": [
+            {
+                "type": [
+                    10447,
+                    10450
+                ],
+                "ref": [
+                    10443,
+                    10444
+                ],
+                "id": [
+                    10443,
+                    10444
+                ],
+                "bi": "default"
+            },
+            {
+                "type": [
+                    10447,
+                    10450
+                ],
+                "ref": [
+                    10445,
+                    10446
+                ],
+                "id": [
+                    10445,
+                    10446
+                ],
+                "bi": "default"
+            }
+        ],
+        "name": [
+            "Section_4_1",
+            "Int",
+            "not_gt_and_eq"
+        ],
+        "modifiers": null,
+        "kind": "theorem",
+        "id": {
+            "range": [
+                10424,
+                10441
+            ],
+            "original": true
+        }
+    },
+    {
+        "value": {
+            "range": [
+                10604,
+                10615
+            ],
+            "original": true
+        },
+        "type": {
+            "range": [
+                10584,
+                10604
+            ],
+            "original": true
+        },
+        "signature": {
+            "range": [
+                10572,
+                10604
+            ],
+            "pp": " (a b : Int) : ¬(a < b ∧ a = b)",
+            "original": true
+        },
+        "scopeInfo": {
+            "varDecls": [],
+            "scopedOpenDecl": [
+                [
+                    "Section_4_1",
+                    "Int"
+                ],
+                [
+                    "Section_4_1"
+                ]
+            ],
+            "openDecl": [],
+            "omitVars": [],
+            "levelNames": [],
+            "includeVars": [],
+            "currNamespace": [
+                "Section_4_1",
+                "Int"
+            ]
+        },
+        "ref": {
+            "range": [
+                10487,
+                10615
+            ],
+            "pp": "/-- Lemma 4.1.11(f) (Order trichotomy) / Exercise 4.1.7 -/\ntheorem not_lt_and_eq (a b : Int) : ¬(a < b ∧ a = b) := by sorry",
+            "original": true
+        },
+        "params": [
+            {
+                "type": [
+                    10577,
+                    10580
+                ],
+                "ref": [
+                    10573,
+                    10574
+                ],
+                "id": [
+                    10573,
+                    10574
+                ],
+                "bi": "default"
+            },
+            {
+                "type": [
+                    10577,
+                    10580
+                ],
+                "ref": [
+                    10575,
+                    10576
+                ],
+                "id": [
+                    10575,
+                    10576
+                ],
+                "bi": "default"
+            }
+        ],
+        "name": [
+            "Section_4_1",
+            "Int",
+            "not_lt_and_eq"
+        ],
+        "modifiers": null,
+        "kind": "theorem",
+        "id": {
+            "range": [
+                10554,
+                10571
+            ],
+            "original": true
+        }
+    },
+    {
+        "value": {
+            "range": [
+                10762,
+                11187
+            ],
+            "original": true
+        },
+        "type": {
+            "range": [
+                10714,
+                10761
+            ],
+            "original": true
+        },
+        "signature": {
+            "range": [
+                10712,
+                10761
+            ],
+            "pp": " : DecidableRel (· ≤ · : Int → Int → Prop)",
+            "original": true
+        },
+        "scopeInfo": {
+            "varDecls": [],
+            "scopedOpenDecl": [
+                [
+                    "Section_4_1",
+                    "Int"
+                ],
+                [
+                    "Section_4_1"
+                ]
+            ],
+            "openDecl": [],
+            "omitVars": [],
+            "levelNames": [],
+            "includeVars": [],
+            "currNamespace": [
+                "Section_4_1",
+                "Int"
+            ]
+        },
+        "ref": {
+            "range": [
+                10617,
+                11187
+            ],
+            "pp": "/-- (Not from textbook) Establish the decidability of this order. -/\ninstance decidableRel : DecidableRel (· ≤ · : Int → Int → Prop) :=\n  by\n  intro n m\n  have : ∀ (n : PreInt) (m : PreInt), Decidable (Quotient.mk PreInt.instSetoid n ≤ Quotient.mk PreInt.instSetoid m) :=\n    by\n    intro ⟨a, b⟩ ⟨c, d⟩\n    change Decidable (a —— b ≤ c —— d)\n    cases (a + d).decLe (b + c) with\n    | isTrue h =>\n      apply isTrue\n      sorry\n    | isFalse h =>\n      apply isFalse\n      sorry\n  exact Quotient.recOnSubsingleton₂ n m this",
+            "original": true
+        },
+        "params": [],
+        "name": [
+            "Section_4_1",
+            "Int",
+            "decidableRel"
+        ],
+        "modifiers": null,
+        "kind": "instance",
+        "id": {
+            "range": [
+                10695,
+                10711
+            ],
+            "original": true
+        }
+    },
+    {
+        "value": {
+            "range": [
+                11329,
+                11340
+            ],
+            "original": true
+        },
+        "type": {
+            "range": [
+                11300,
+                11328
+            ],
+            "original": true
+        },
+        "signature": {
+            "range": [
+                11288,
+                11328
+            ],
+            "pp": " (b : Int) : (∀ a, a = a + b) ↔ b = 0",
+            "original": true
+        },
+        "scopeInfo": {
+            "varDecls": [],
+            "scopedOpenDecl": [
+                [
+                    "Section_4_1",
+                    "Int"
+                ],
+                [
+                    "Section_4_1"
+                ]
+            ],
+            "openDecl": [],
+            "omitVars": [],
+            "levelNames": [],
+            "includeVars": [],
+            "currNamespace": [
+                "Section_4_1",
+                "Int"
+            ]
+        },
+        "ref": {
+            "range": [
+                11189,
+                11340
+            ],
+            "pp": "/-- (Not from textbook) 0 is the only additive identity -/\ntheorem is_additive_identity_iff_eq_0 (b : Int) : (∀ a, a = a + b) ↔ b = 0 := by sorry",
+            "original": true
+        },
+        "params": [
+            {
+                "type": [
+                    11293,
+                    11296
+                ],
+                "ref": [
+                    11289,
+                    11290
+                ],
+                "id": [
+                    11289,
+                    11290
+                ],
+                "bi": "default"
+            }
+        ],
+        "name": [
+            "Section_4_1",
+            "Int",
+            "is_additive_identity_iff_eq_0"
+        ],
+        "modifiers": null,
+        "kind": "theorem",
+        "id": {
+            "range": [
+                11254,
+                11287
+            ],
+            "original": true
+        }
+    },
+    {
+        "value": {
+            "range": [
+                11460,
+                11607
+            ],
+            "original": true
+        },
+        "type": {
+            "range": [
+                11444,
+                11459
+            ],
+            "original": true
+        },
+        "signature": {
+            "range": [
+                11442,
+                11459
+            ],
+            "pp": " : LinearOrder Int",
+            "original": true
+        },
+        "scopeInfo": {
+            "varDecls": [],
+            "scopedOpenDecl": [
+                [
+                    "Section_4_1",
+                    "Int"
+                ],
+                [
+                    "Section_4_1"
+                ]
+            ],
+            "openDecl": [],
+            "omitVars": [],
+            "levelNames": [],
+            "includeVars": [],
+            "currNamespace": [
+                "Section_4_1",
+                "Int"
+            ]
+        },
+        "ref": {
+            "range": [
+                11342,
+                11607
+            ],
+            "pp": "/-- (Not from textbook) Int has the structure of a linear ordering. -/\ninstance instLinearOrder : LinearOrder Int where\n  le_refl := sorry\n  le_trans := sorry\n  lt_iff_le_not_ge := sorry\n  le_antisymm := sorry\n  le_total := sorry\n  toDecidableLE := decidableRel",
+            "original": true
+        },
+        "params": [],
+        "name": [
+            "Section_4_1",
+            "Int",
+            "instLinearOrder"
+        ],
+        "modifiers": null,
+        "kind": "instance",
+        "id": {
+            "range": [
+                11422,
+                11441
+            ],
+            "original": true
+        }
+    },
+    {
+        "value": {
+            "range": [
+                11677,
+                11688
+            ],
+            "original": true
+        },
+        "type": {
+            "range": [
+                11665,
+                11676
+            ],
+            "original": true
+        },
+        "signature": {
+            "range": [
+                11655,
+                11676
+            ],
+            "pp": " (a : Int) : -1 * a = -a",
+            "original": true
+        },
+        "scopeInfo": {
+            "varDecls": [],
+            "scopedOpenDecl": [
+                [
+                    "Section_4_1",
+                    "Int"
+                ],
+                [
+                    "Section_4_1"
+                ]
+            ],
+            "openDecl": [],
+            "omitVars": [],
+            "levelNames": [],
+            "includeVars": [],
+            "currNamespace": [
+                "Section_4_1",
+                "Int"
+            ]
+        },
+        "ref": {
+            "range": [
+                11609,
+                11688
+            ],
+            "pp": "/-- Exercise 4.1.3 -/\ntheorem neg_one_mul (a : Int) : -1 * a = -a := by sorry",
+            "original": true
+        },
+        "params": [
+            {
+                "type": [
+                    11658,
+                    11661
+                ],
+                "ref": [
+                    11656,
+                    11657
+                ],
+                "id": [
+                    11656,
+                    11657
+                ],
+                "bi": "default"
+            }
+        ],
+        "name": [
+            "Section_4_1",
+            "Int",
+            "neg_one_mul"
+        ],
+        "modifiers": null,
+        "kind": "theorem",
+        "id": {
+            "range": [
+                11639,
+                11654
+            ],
+            "original": true
+        }
+    },
+    {
+        "value": {
+            "range": [
+                11811,
+                11822
+            ],
+            "original": true
+        },
+        "type": {
+            "range": [
+                11739,
+                11810
+            ],
+            "original": true
+        },
+        "signature": {
+            "range": [
+                11737,
+                11810
+            ],
+            "pp": " : ∃ P : Int → Prop, (P 0 ∧ ∀ n, P n → P (n + 1)) ∧ ¬∀ n, P n",
+            "original": true
+        },
+        "scopeInfo": {
+            "varDecls": [],
+            "scopedOpenDecl": [
+                [
+                    "Section_4_1",
+                    "Int"
+                ],
+                [
+                    "Section_4_1"
+                ]
+            ],
+            "openDecl": [],
+            "omitVars": [],
+            "levelNames": [],
+            "includeVars": [],
+            "currNamespace": [
+                "Section_4_1",
+                "Int"
+            ]
+        },
+        "ref": {
+            "range": [
+                11690,
+                11822
+            ],
+            "pp": "/-- Exercise 4.1.8 -/\ntheorem no_induction : ∃ P : Int → Prop, (P 0 ∧ ∀ n, P n → P (n + 1)) ∧ ¬∀ n, P n := by sorry",
+            "original": true
+        },
+        "params": [],
+        "name": [
+            "Section_4_1",
+            "Int",
+            "no_induction"
+        ],
+        "modifiers": null,
+        "kind": "theorem",
+        "id": {
+            "range": [
+                11720,
+                11736
+            ],
+            "original": true
+        }
+    },
+    {
+        "value": {
+            "range": [
+                12013,
+                12024
+            ],
+            "original": true
+        },
+        "type": {
+            "range": [
+                12003,
+                12012
+            ],
+            "original": true
+        },
+        "signature": {
+            "range": [
+                11980,
+                12012
+            ],
+            "pp": " (n : Int) (h : 0 ≤ n) : 0 ≤ n * n",
+            "original": true
+        },
+        "scopeInfo": {
+            "varDecls": [],
+            "scopedOpenDecl": [
+                [
+                    "Section_4_1",
+                    "Int"
+                ],
+                [
+                    "Section_4_1"
+                ]
+            ],
+            "openDecl": [],
+            "omitVars": [],
+            "levelNames": [],
+            "includeVars": [],
+            "currNamespace": [
+                "Section_4_1",
+                "Int"
+            ]
+        },
+        "ref": {
+            "range": [
+                11824,
+                12024
+            ],
+            "pp": "/--\nA nonnegative number squared is nonnegative. This is a special case of 4.1.9 that's useful for proving the general case. --/\ntheorem sq_nonneg_of_pos (n : Int) (h : 0 ≤ n) : 0 ≤ n * n := by sorry",
+            "original": true
+        },
+        "params": [
+            {
+                "type": [
+                    11983,
+                    11986
+                ],
+                "ref": [
+                    11981,
+                    11982
+                ],
+                "id": [
+                    11981,
+                    11982
+                ],
+                "bi": "default"
+            },
+            {
+                "type": [
+                    11992,
+                    11999
+                ],
+                "ref": [
+                    11989,
+                    11990
+                ],
+                "id": [
+                    11989,
+                    11990
+                ],
+                "bi": "default"
+            }
+        ],
+        "name": [
+            "Section_4_1",
+            "Int",
+            "sq_nonneg_of_pos"
+        ],
+        "modifiers": null,
+        "kind": "theorem",
+        "id": {
+            "range": [
+                11959,
+                11979
+            ],
+            "original": true
+        }
+    },
+    {
+        "value": {
+            "range": [
+                12133,
+                12144
+            ],
+            "original": true
+        },
+        "type": {
+            "range": [
+                12123,
+                12132
+            ],
+            "original": true
+        },
+        "signature": {
+            "range": [
+                12113,
+                12132
+            ],
+            "pp": " (n : Int) : 0 ≤ n * n",
+            "original": true
+        },
+        "scopeInfo": {
+            "varDecls": [],
+            "scopedOpenDecl": [
+                [
+                    "Section_4_1",
+                    "Int"
+                ],
+                [
+                    "Section_4_1"
+                ]
+            ],
+            "openDecl": [],
+            "omitVars": [],
+            "levelNames": [],
+            "includeVars": [],
+            "currNamespace": [
+                "Section_4_1",
+                "Int"
+            ]
+        },
+        "ref": {
+            "range": [
+                12026,
+                12144
+            ],
+            "pp": "/-- Exercise 4.1.9. The square of any integer is nonnegative. -/\ntheorem sq_nonneg (n : Int) : 0 ≤ n * n := by sorry",
+            "original": true
+        },
+        "params": [
+            {
+                "type": [
+                    12116,
+                    12119
+                ],
+                "ref": [
+                    12114,
+                    12115
+                ],
+                "id": [
+                    12114,
+                    12115
+                ],
+                "bi": "default"
+            }
+        ],
+        "name": [
+            "Section_4_1",
+            "Int",
+            "sq_nonneg"
+        ],
+        "modifiers": null,
+        "kind": "theorem",
+        "id": {
+            "range": [
+                12099,
+                12112
+            ],
+            "original": true
+        }
+    },
+    {
+        "value": {
+            "range": [
+                12222,
+                12233
+            ],
+            "original": true
+        },
+        "type": {
+            "range": [
+                12201,
+                12221
+            ],
+            "original": true
+        },
+        "signature": {
+            "range": [
+                12191,
+                12221
+            ],
+            "pp": " (n : Int) : ∃ (m : Nat), n * n = m",
+            "original": true
+        },
+        "scopeInfo": {
+            "varDecls": [],
+            "scopedOpenDecl": [
+                [
+                    "Section_4_1",
+                    "Int"
+                ],
+                [
+                    "Section_4_1"
+                ]
+            ],
+            "openDecl": [],
+            "omitVars": [],
+            "levelNames": [],
+            "includeVars": [],
+            "currNamespace": [
+                "Section_4_1",
+                "Int"
+            ]
+        },
+        "ref": {
+            "range": [
+                12146,
+                12233
+            ],
+            "pp": "/-- Exercise 4.1.9 -/\ntheorem sq_nonneg' (n : Int) : ∃ (m : Nat), n * n = m := by sorry",
+            "original": true
+        },
+        "params": [
+            {
+                "type": [
+                    12194,
+                    12197
+                ],
+                "ref": [
+                    12192,
+                    12193
+                ],
+                "id": [
+                    12192,
+                    12193
+                ],
+                "bi": "default"
+            }
+        ],
+        "name": [
+            "Section_4_1",
+            "Int",
+            "sq_nonneg'"
+        ],
+        "modifiers": null,
+        "kind": "theorem",
+        "id": {
+            "range": [
+                12176,
+                12190
+            ],
+            "original": true
+        }
+    },
+    {
+        "value": {
+            "range": [
+                12423,
+                12560
+            ],
+            "original": true
+        },
+        "type": {
+            "range": [
+                12411,
+                12422
+            ],
+            "original": true
+        },
+        "signature": {
+            "range": [
+                12409,
+                12422
+            ],
+            "pp": " : Int ≃ ℤ",
+            "original": true
+        },
+        "scopeInfo": {
+            "varDecls": [],
+            "scopedOpenDecl": [
+                [
+                    "Section_4_1",
+                    "Int"
+                ],
+                [
+                    "Section_4_1"
+                ]
+            ],
+            "openDecl": [],
+            "omitVars": [],
+            "levelNames": [],
+            "includeVars": [],
+            "currNamespace": [
+                "Section_4_1",
+                "Int"
+            ]
+        },
+        "ref": {
+            "range": [
+                12235,
+                12560
+            ],
+            "pp": "/-- Not in textbook: create an equivalence between Int and ℤ.\n  This requires some familiarity with the API for Mathlib's version of the integers.\n-/\nabbrev equivInt : Int ≃ ℤ where\n  toFun := Quotient.lift (fun ⟨a, b⟩ ↦ a - b) (by sorry)\n  invFun := sorry\n  left_inv n := sorry\n  right_inv n := sorry",
+            "original": true
+        },
+        "params": [],
+        "name": [
+            "Section_4_1",
+            "Int",
+            "equivInt"
+        ],
+        "modifiers": null,
+        "kind": "abbrev",
+        "id": {
+            "range": [
+                12396,
+                12408
+            ],
+            "original": true
+        }
+    },
+    {
+        "value": {
+            "range": [
+                12684,
+                12787
+            ],
+            "original": true
+        },
+        "type": {
+            "range": [
+                12669,
+                12683
+            ],
+            "original": true
+        },
+        "signature": {
+            "range": [
+                12667,
+                12683
+            ],
+            "pp": " : Int ≃+*o ℤ",
+            "original": true
+        },
+        "scopeInfo": {
+            "varDecls": [],
+            "scopedOpenDecl": [
+                [
+                    "Section_4_1",
+                    "Int"
+                ],
+                [
+                    "Section_4_1"
+                ]
+            ],
+            "openDecl": [],
+            "omitVars": [],
+            "levelNames": [],
+            "includeVars": [],
+            "currNamespace": [
+                "Section_4_1",
+                "Int"
+            ]
+        },
+        "ref": {
+            "range": [
+                12562,
+                12787
+            ],
+            "pp": "/-- Not in textbook: equivalence preserves order and ring operations -/\nabbrev equivInt_ordered_ring : Int ≃+*o ℤ where\n  toEquiv := equivInt\n  map_add' := by sorry\n  map_mul' := by sorry\n  map_le_map_iff' := by sorry",
+            "original": true
+        },
+        "params": [],
+        "name": [
+            "Section_4_1",
+            "Int",
+            "equivInt_ordered_ring"
+        ],
+        "modifiers": null,
+        "kind": "abbrev",
+        "id": {
+            "range": [
+                12641,
+                12666
+            ],
+            "original": true
+        }
+    }
+]

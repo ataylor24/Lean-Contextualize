@@ -1,0 +1,18 @@
+{
+    "imports": [
+        [
+            "Init"
+        ],
+        [
+            "Mathlib",
+            "Tactic"
+        ],
+        [
+            "Analysis",
+            "Section_2_1"
+        ]
+    ],
+    "docstring": [
+        "# Analysis I, Section 2.2: Addition\n\nThis file is a translation of Section 2.2 of Analysis I to Lean 4.  All numbering refers to the\noriginal text.\n\nI have attempted to make the translation as faithful a paraphrasing as possible of the original\ntext. When there is a choice between a more idiomatic Lean solution and a more faithful\ntranslation, I have generally chosen the latter.  In particular, there will be places where the\nLean code could be \"golfed\" to be more elegant and idiomatic, but I have consciously avoided\ndoing so.\n\nMain constructions and results of this section:\n\n- Definition of addition and order for the \"Chapter 2\" natural numbers, `Chapter2.Nat`.\n- Establishment of basic properties of addition and order.\n\nNote: at the end of this chapter, the `Chapter2.Nat` class will be deprecated in favor of the\nstandard Mathlib class `_root_.Nat`, or `ℕ`.  However, we will develop the properties of\n`Chapter2.Nat` \"by hand\" for pedagogical purposes.\n\n## Tips from past users\n\nUsers of the companion who have completed the exercises in this section are welcome to send their tips for future users in this section as PRs.\n\n- (Add tip here)\n\n"
+    ]
+}

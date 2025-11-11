@@ -1,0 +1,205 @@
+[
+    {
+        "range": [
+            23,
+            1486
+        ],
+        "kind": "Lean.Parser.Command.moduleDoc"
+    },
+    {
+        "range": [
+            1488,
+            1506
+        ],
+        "kind": "Lean.Parser.Command.namespace"
+    },
+    {
+        "range": [
+            1508,
+            1802
+        ],
+        "kind": "Lean.Parser.Command.declaration"
+    },
+    {
+        "range": [
+            1846,
+            1935
+        ],
+        "kind": "Lean.Parser.Command.declaration"
+    },
+    {
+        "range": [
+            1936,
+            1950
+        ],
+        "kind": "Lean.Parser.Command.check"
+    },
+    {
+        "range": [
+            1952,
+            2049
+        ],
+        "kind": "Lean.Parser.Command.mixfix"
+    },
+    {
+        "range": [
+            2050,
+            2072
+        ],
+        "kind": "Lean.Parser.Command.check"
+    },
+    {
+        "range": [
+            2075,
+            2405
+        ],
+        "kind": "Lean.Parser.Command.declaration"
+    },
+    {
+        "range": [
+            2407,
+            2450
+        ],
+        "kind": "Lean.Parser.Command.declaration"
+    },
+    {
+        "range": [
+            2451,
+            2490
+        ],
+        "kind": "lemma"
+    },
+    {
+        "range": [
+            2491,
+            2505
+        ],
+        "kind": "Lean.Parser.Command.check"
+    },
+    {
+        "range": [
+            2507,
+            2545
+        ],
+        "kind": "lemma"
+    },
+    {
+        "range": [
+            2546,
+            2560
+        ],
+        "kind": "Lean.Parser.Command.check"
+    },
+    {
+        "range": [
+            2562,
+            2648
+        ],
+        "kind": "lemma"
+    },
+    {
+        "range": [
+            2649,
+            2663
+        ],
+        "kind": "Lean.Parser.Command.check"
+    },
+    {
+        "range": [
+            2665,
+            2847
+        ],
+        "kind": "Lean.Parser.Command.declaration"
+    },
+    {
+        "range": [
+            2849,
+            3042
+        ],
+        "kind": "Lean.Parser.Command.declaration"
+    },
+    {
+        "range": [
+            3044,
+            3239
+        ],
+        "kind": "Lean.Parser.Command.declaration"
+    },
+    {
+        "range": [
+            3241,
+            3474
+        ],
+        "kind": "Lean.Parser.Command.declaration"
+    },
+    {
+        "range": [
+            3476,
+            3784
+        ],
+        "kind": "Lean.Parser.Command.declaration"
+    },
+    {
+        "range": [
+            3786,
+            3909
+        ],
+        "kind": "Lean.Parser.Command.declaration"
+    },
+    {
+        "range": [
+            3911,
+            4257
+        ],
+        "kind": "Lean.Parser.Command.declaration"
+    },
+    {
+        "range": [
+            4259,
+            4503
+        ],
+        "kind": "Lean.Parser.Command.declaration"
+    },
+    {
+        "range": [
+            4505,
+            4687
+        ],
+        "kind": "Lean.Parser.Command.declaration"
+    },
+    {
+        "range": [
+            4689,
+            4905
+        ],
+        "kind": "Lean.Parser.Command.declaration"
+    },
+    {
+        "range": [
+            4907,
+            5457
+        ],
+        "kind": "Lean.Parser.Command.declaration"
+    },
+    {
+        "range": [
+            5460,
+            5850
+        ],
+        "kind": "Lean.Parser.Command.declaration"
+    },
+    {
+        "range": [
+            5852,
+            5864
+        ],
+        "kind": "Lean.Parser.Command.end"
+    },
+    {
+        "range": [
+            5865,
+            5865
+        ],
+        "kind": "Lean.Parser.Command.eoi"
+    }
+]

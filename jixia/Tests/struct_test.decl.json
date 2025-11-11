@@ -1,0 +1,438 @@
+[
+    {
+        "value": null,
+        "type": {
+            "range": [
+                373,
+                377
+            ],
+            "original": true
+        },
+        "signature": {
+            "range": {
+                "stop": 377,
+                "start": 357
+            },
+            "pp": " (α : Type u) : Prop",
+            "original": true
+        },
+        "scopeInfo": {
+            "varDecls": [],
+            "scopedOpenDecl": [
+                [
+                    "StructTest"
+                ]
+            ],
+            "openDecl": [],
+            "omitVars": [],
+            "levelNames": [],
+            "includeVars": [],
+            "currNamespace": [
+                "StructTest"
+            ]
+        },
+        "ref": {
+            "range": {
+                "stop": 395,
+                "start": 302
+            },
+            "pp": "/-- Simple class for instance-binder tests. -/\nclass P (α : Type u) : Prop where\n  ok : True",
+            "original": true
+        },
+        "params": [
+            {
+                "type": [
+                    363,
+                    369
+                ],
+                "ref": [
+                    358,
+                    360
+                ],
+                "id": [
+                    358,
+                    360
+                ],
+                "bi": "default"
+            }
+        ],
+        "name": [
+            "StructTest",
+            "P"
+        ],
+        "modifiers": null,
+        "kind": "structure",
+        "id": {
+            "range": [
+                355,
+                356
+            ],
+            "original": true
+        },
+        "fields": [],
+        "constructors": []
+    },
+    {
+        "value": null,
+        "type": null,
+        "signature": {
+            "range": {
+                "stop": 581,
+                "start": 568
+            },
+            "pp": " (α : Type u)",
+            "original": true
+        },
+        "scopeInfo": {
+            "varDecls": [],
+            "scopedOpenDecl": [
+                [
+                    "StructTest"
+                ]
+            ],
+            "openDecl": [],
+            "omitVars": [],
+            "levelNames": [],
+            "includeVars": [],
+            "currNamespace": [
+                "StructTest"
+            ]
+        },
+        "ref": {
+            "range": {
+                "stop": 759,
+                "start": 397
+            },
+            "pp": "/-- Structure with:\n  • named field `f : Nat := 0`\n  • simple binder field `x : List α`\n  • instance binder field `[instP : P α]`  (note the colon)\n-/\nstructure S (α : Type u) where\n  /-- Named field with default value. -/\n  f : Nat := 0\n  /-- Simple binder form. -/\n  x : List α\n  /-- Instance binder form: MUST be `[name : Type]`. -/\n  [instP : P α]",
+            "original": true
+        },
+        "params": [
+            {
+                "type": [
+                    574,
+                    580
+                ],
+                "ref": [
+                    569,
+                    571
+                ],
+                "id": [
+                    569,
+                    571
+                ],
+                "bi": "default"
+            }
+        ],
+        "name": [
+            "StructTest",
+            "S"
+        ],
+        "modifiers": null,
+        "kind": "structure",
+        "id": {
+            "range": [
+                566,
+                567
+            ],
+            "original": true
+        },
+        "fields": [],
+        "constructors": []
+    },
+    {
+        "value": null,
+        "type": null,
+        "signature": {
+            "range": {
+                "stop": 868,
+                "start": 855
+            },
+            "pp": " (α : Type u)",
+            "original": true
+        },
+        "scopeInfo": {
+            "varDecls": [],
+            "scopedOpenDecl": [
+                [
+                    "StructTest"
+                ]
+            ],
+            "openDecl": [],
+            "omitVars": [],
+            "levelNames": [],
+            "includeVars": [],
+            "currNamespace": [
+                "StructTest"
+            ]
+        },
+        "ref": {
+            "range": {
+                "stop": 921,
+                "start": 761
+            },
+            "pp": "/-- Class variant to exercise `class` field parsing, including an instance binder. -/\nclass C (α : Type u) where\n  g : α → Bool\n  [instDec : DecidableEq α]",
+            "original": true
+        },
+        "params": [
+            {
+                "type": [
+                    861,
+                    867
+                ],
+                "ref": [
+                    856,
+                    858
+                ],
+                "id": [
+                    856,
+                    858
+                ],
+                "bi": "default"
+            }
+        ],
+        "name": [
+            "StructTest",
+            "C"
+        ],
+        "modifiers": null,
+        "kind": "structure",
+        "id": {
+            "range": [
+                853,
+                854
+            ],
+            "original": true
+        },
+        "fields": [],
+        "constructors": []
+    },
+    {
+        "value": null,
+        "type": null,
+        "signature": {
+            "range": null,
+            "pp": "",
+            "original": false
+        },
+        "scopeInfo": {
+            "varDecls": [],
+            "scopedOpenDecl": [
+                [
+                    "StructTest"
+                ]
+            ],
+            "openDecl": [],
+            "omitVars": [],
+            "levelNames": [],
+            "includeVars": [],
+            "currNamespace": [
+                "StructTest"
+            ]
+        },
+        "ref": {
+            "range": {
+                "stop": 1031,
+                "start": 923
+            },
+            "pp": "/-- Inductive with a single constructor, for constructor collection. -/\ninductive T where\n  | mk : Nat → T",
+            "original": true
+        },
+        "params": [],
+        "name": [
+            "StructTest",
+            "T"
+        ],
+        "modifiers": null,
+        "kind": "inductive",
+        "id": {
+            "range": [
+                1005,
+                1006
+            ],
+            "original": true
+        },
+        "fields": [],
+        "constructors": [
+            {
+                "value": null,
+                "type": {
+                    "range": [
+                        1022,
+                        1031
+                    ],
+                    "original": true
+                },
+                "signature": {
+                    "range": {
+                        "stop": 1031,
+                        "start": 1020
+                    },
+                    "pp": " : Nat → T",
+                    "original": true
+                },
+                "scopeInfo": {
+                    "varDecls": [],
+                    "scopedOpenDecl": [
+                        [
+                            "StructTest"
+                        ]
+                    ],
+                    "openDecl": [],
+                    "omitVars": [],
+                    "levelNames": [],
+                    "includeVars": [],
+                    "currNamespace": [
+                        "StructTest"
+                    ]
+                },
+                "ref": {
+                    "range": {
+                        "stop": 1031,
+                        "start": 1015
+                    },
+                    "pp": "\n  | mk : Nat → T",
+                    "original": true
+                },
+                "params": [],
+                "name": [
+                    "StructTest",
+                    "StructTest",
+                    "T",
+                    "mk"
+                ],
+                "modifiers": null,
+                "kind": "constructor",
+                "id": {
+                    "range": [
+                        1017,
+                        1019
+                    ],
+                    "original": true
+                }
+            }
+        ]
+    },
+    {
+        "value": {
+            "range": [
+                1056,
+                1064
+            ],
+            "original": true
+        },
+        "type": {
+            "range": [
+                1054,
+                1055
+            ],
+            "original": true
+        },
+        "signature": {
+            "range": {
+                "stop": 1055,
+                "start": 1052
+            },
+            "pp": " : T",
+            "original": true
+        },
+        "scopeInfo": {
+            "varDecls": [],
+            "scopedOpenDecl": [
+                [
+                    "StructTest"
+                ],
+                [
+                    "StructTest",
+                    "T"
+                ]
+            ],
+            "openDecl": [
+                {
+                    "simple": {
+                        "namespace": [
+                            "StructTest",
+                            "T"
+                        ],
+                        "except": []
+                    }
+                }
+            ],
+            "omitVars": [],
+            "levelNames": [],
+            "includeVars": [],
+            "currNamespace": [
+                "StructTest"
+            ]
+        },
+        "ref": {
+            "range": {
+                "stop": 1064,
+                "start": 1043
+            },
+            "pp": "def demo : T :=\n  .mk 3",
+            "original": true
+        },
+        "params": [],
+        "name": [
+            "StructTest",
+            "demo"
+        ],
+        "modifiers": null,
+        "kind": "definition",
+        "id": {
+            "range": [
+                1047,
+                1051
+            ],
+            "original": true
+        }
+    },
+    {
+        "value": null,
+        "type": null,
+        "signature": {
+            "range": null,
+            "pp": "",
+            "original": false
+        },
+        "scopeInfo": {
+            "varDecls": [],
+            "scopedOpenDecl": [
+                [
+                    "StructTest"
+                ]
+            ],
+            "openDecl": [],
+            "omitVars": [],
+            "levelNames": [],
+            "includeVars": [],
+            "currNamespace": [
+                "StructTest"
+            ]
+        },
+        "ref": {
+            "range": {
+                "stop": 1202,
+                "start": 1066
+            },
+            "pp": "/-- Another structure to check multiple declarations & instance binder. -/\nstructure S2 where\n  y : Nat\n  [instDecNat : DecidableEq Nat]",
+            "original": true
+        },
+        "params": [],
+        "name": [
+            "StructTest",
+            "S2"
+        ],
+        "modifiers": null,
+        "kind": "structure",
+        "id": {
+            "range": [
+                1151,
+                1153
+            ],
+            "original": true
+        },
+        "fields": [],
+        "constructors": []
+    }
+]

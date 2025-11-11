@@ -1,0 +1,7 @@
+[
+    {
+        "chapter_name": "Section_2_2",
+        "FQN": "Chapter2.Nat.backwards_induction",
+        "content": "import Mathlib.Tactic\n\nnamespace Chapter2\n\ninductive Nat where\n  | zero : Nat\n  | succ : Nat \u2192 Nat\n  deriving DecidableEq\n\ninstance Nat.instZero : Zero Nat := \u27e8 Nat.zero \u27e9\npostfix:100 \"++\" => Nat.succ\n\nnamespace Nat\n\nabbrev recurse (f : Nat \u2192 Nat \u2192 Nat) (c : Nat) : Nat \u2192 Nat := fun n \u21a6\n  match n with\n  | 0 => c\n  | n++ => f n (recurse f c n)\n\nabbrev add (n m : Nat) : Nat :=\n  Nat.recurse (fun _ sum \u21a6 sum++) m n\n\ninstance instAdd : Add Nat where\n  add := add\n\ninstance instLE : LE Nat where\n  le n m := \u2203 a : Nat, m = n + a\n\nend Nat\n\ntheorem Nat.backwards_induction {n:Nat} {P: Nat \u2192 Prop}\n  (hind: \u2200 m, P (m++) \u2192 P m) (hn: P n) :\n    \u2200 m, m \u2264 n \u2192 P m := by\n  sorry\n\nend Chapter2"
+    }
+]
