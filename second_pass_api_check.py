@@ -54,7 +54,7 @@ def run_api_call(api_call: str, client: Any) -> str:
                 {"role": "system", "content": "Please format your final response as a valid lean code block wrapped in ```lean tags."},
                 {"role": "user", "content": api_call},
             ],
-            reasoning_effort="medium",
+            reasoning_effort="high",
         )
         if completion.choices and completion.choices[0].message:
             content = completion.choices[0].message.content or ""
@@ -99,7 +99,7 @@ def process_single_query(index: int, query: Dict[str, Any], client: Any) -> Dict
     return {"index": index, "updated_entry": updated_entry, "log_entry": log_entry}
 
 def main(data: List[Dict[str, Any]]):
-    max_workers = 15
+    max_workers = 50
     client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"), timeout=1000)
     results_by_index: Dict[int, Dict[str, Any]] = {}
     updated_by_index: Dict[int, Dict[str, Any]] = {}

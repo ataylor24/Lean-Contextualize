@@ -117,16 +117,17 @@ def main():
         for i, entry in enumerate(rows):
             try:
                 code = extract_code(entry)
+                index = entry["index"]
             except Exception as e:
                 results.append({
-                    "index": i,
+                    "index": index,
                     "status": "extract_failed",
                     "error": str(e),
                 })
                 continue
 
             # Create a per-snippet directory with a Main.lean
-            snip_dir = base_tmp_path / f"snippet_{i}"
+            snip_dir = base_tmp_path / f"snippet_{index}"
             snip_dir.mkdir(parents=True, exist_ok=True)
             main_lean = snip_dir / "Main.lean"
 
@@ -140,7 +141,7 @@ def main():
                 ok += 1
 
             results.append({
-                "index": i,
+                "index": index,
                 "src_text": src_text,
                 "status": status,
                 "returncode": proc.returncode,
