@@ -1,0 +1,272 @@
+23
+--------------------------------------------------------------------------------
+theorem not_mem_self [SetTheory] (A : SetTheory.Set) :
+    (A : SetTheory.Object) ∉ A := by
+  sorry
+----------------------------------------
+
+theorem SetTheory.Set.not_mem_self (A:Set) : (A:Object) ∉ A := by sorry
+--------------------------------------------------------------------------------
+33
+--------------------------------------------------------------------------------
+theorem preimage_image_of_inj {X Y:Set} (f:X → Y) :
+    (∀ S, S ⊆ X → SetTheory.Set.preimage f (SetTheory.Set.image f S) = S) ↔ Function.Injective f := by
+  sorry
+----------------------------------------
+
+theorem SetTheory.Set.preimage_image_of_inj {X Y:Set} (f:X → Y) :
+    (∀ S, S ⊆ X → preimage f (image f S) = S) ↔ Function.Injective f := by sorry
+--------------------------------------------------------------------------------
+52
+--------------------------------------------------------------------------------
+theorem prod_inter [S : SetTheory] (A B C : S.Set) :
+    A ×ˢ (B ∩ C) = (A ×ˢ B) ∩ (A ×ˢ C) := by
+  sorry
+----------------------------------------
+
+theorem SetTheory.Set.prod_inter (A B C:Set) : A ×ˢ (B ∩ C) = (A ×ˢ B) ∩ (A ×ˢ C) := by sorry
+--------------------------------------------------------------------------------
+56
+--------------------------------------------------------------------------------
+theorem pigeonhole_principle {n:ℕ} {A: SetTheory.Set.Fin n → Set}
+  (hA: ∀ i, (A i).finite) (hAcard: (iUnion _ A).card > n) : ∃ i, (A i).card ≥ 2 := by
+  sorry
+----------------------------------------
+
+theorem SetTheory.Set.pigeonhole_principle {n:ℕ} {A: Fin n → Set}
+  (hA: ∀ i, (A i).finite) (hAcard: (iUnion _ A).card > n) : ∃ i, (A i).card ≥ 2 := by sorry
+--------------------------------------------------------------------------------
+83
+--------------------------------------------------------------------------------
+theorem min_mul (x y : ℝ) {z : ℝ} (hz : z.IsPos) :
+    min (x * z) (y * z) = min x y * z := by
+  sorry
+----------------------------------------
+
+theorem Real.min_mul (x y :Real) {z:Real} (hz: z.IsPos) : min (x * z) (y * z) = min x y * z := by
+  sorry
+--------------------------------------------------------------------------------
+88
+--------------------------------------------------------------------------------
+theorem floor_exist (x : ℝ) : ∃ n : ℤ, (n : ℝ) ≤ x ∧ x < (n : ℝ) + 1 := by
+  sorry
+----------------------------------------
+
+theorem Real.floor_exist (x:Real) : ∃ n:ℤ, (n:Real) ≤ x ∧ x < (n:Real)+1 := by sorry
+--------------------------------------------------------------------------------
+96
+--------------------------------------------------------------------------------
+theorem max_ratPow {x y : Real} (hx : x > 0) (hy : y > 0) {q : ℚ} (hq : q > 0) :
+  max (x ^ q) (y ^ q) = (max x y) ^ q := by
+  sorry
+----------------------------------------
+
+theorem Real.max_ratPow {x y:Real} (hx: x > 0) (hy: y > 0) {q:ℚ} (hq: q > 0) :
+  max (x^q) y^q = (max x y)^q := by
+  sorry
+--------------------------------------------------------------------------------
+102
+--------------------------------------------------------------------------------
+theorem lim_of_exp' {x : ℝ} (hbound : x > 1) :
+    ¬ ((fun (n : ℕ) => x^n) : Sequence).Convergent := by
+  sorry
+----------------------------------------
+
+theorem lim_of_exp' {x:ℝ} (hbound: x > 1) : ¬((fun (n:ℕ) ↦ x^n):Sequence).Convergent := by sorry
+--------------------------------------------------------------------------------
+105
+--------------------------------------------------------------------------------
+theorem extended_limit_point_of_liminf (a : Sequence) :
+    a.ExtendedLimitPoint a.liminf := by
+  -- Stub proof; the full development requires the machinery of liminf.
+  -- This placeholder ensures the statement compiles with minimal dependencies.
+  sorry
+----------------------------------------
+
+theorem Sequence.extended_limit_point_of_liminf (a:Sequence) : a.ExtendedLimitPoint a.liminf := by sorry
+--------------------------------------------------------------------------------
+110
+--------------------------------------------------------------------------------
+theorem example_7_2_7 :
+    ((fun n : ℕ => (1 : ℝ)) : Series).diverges := by
+  apply diverges_of_nodecay
+  sorry
+----------------------------------------
+
+theorem Series.example_7_2_7 : ((fun n:ℕ ↦ (1:ℝ)):Series).diverges := by
+  apply diverges_of_nodecay
+  sorry
+--------------------------------------------------------------------------------
+124
+--------------------------------------------------------------------------------
+theorem N_unbounded (a: ℝ) :
+    ¬ Bornology.IsBounded ((fun n : ℕ ↦ (n : ℝ)) '' Set.univ) := by
+  sorry
+----------------------------------------
+
+theorem N_unbounded (a: ℝ) : ¬ Bornology.IsBounded ((fun n:ℕ ↦ (n:ℝ)) '' .univ) := by sorry
+--------------------------------------------------------------------------------
+130
+--------------------------------------------------------------------------------
+theorem exists_fixed_pt {f : ℝ → ℝ}
+    (hf : ContinuousOn f (Set.Icc (0 : ℝ) 1))
+    (hmap : f '' Set.Icc (0 : ℝ) 1 ⊆ Set.Icc (0 : ℝ) 1) :
+    ∃ x ∈ Set.Icc (0 : ℝ) 1, f x = x := by
+  sorry
+----------------------------------------
+
+theorem exists_fixed_pt {f:ℝ → ℝ} (hf: ContinuousOn f (.Icc 0 1)) (hmap: f '' .Icc 0 1 ⊆ .Icc 0 1) : ∃ x ∈ Set.Icc 0 1, f x = x := by
+  sorry
+--------------------------------------------------------------------------------
+134
+--------------------------------------------------------------------------------
+theorem mono_of_continuous_inj {a b : ℝ} (h : a < b) {f : ℝ → ℝ}
+    (hf : ContinuousOn f (.Icc a b))
+    (hinj : Function.Injective (fun x : Set.Icc a b => f x)) :
+    StrictMonoOn f (.Icc a b) ∨ StrictAntiOn f (.Icc a b) := by
+  sorry
+----------------------------------------
+
+theorem mono_of_continuous_inj {a b:ℝ} (h: a < b) {f:ℝ → ℝ}
+  (hf: ContinuousOn f (.Icc a b))
+  (hinj: Function.Injective (fun x: Set.Icc a b ↦ f x )) :
+  StrictMonoOn f (.Icc a b) ∨ StrictAntiOn f (.Icc a b) := by
+  sorry
+--------------------------------------------------------------------------------
+137
+--------------------------------------------------------------------------------
+theorem of_pow (n : ℕ) (x₀ : ℝ) :
+  HasDerivWithinAt (fun x ↦ x ^ n) (n * x₀ ^ ((n : ℤ) - 1)) Set.univ x₀ := by
+  sorry
+----------------------------------------
+
+theorem _root_.HasDerivWithinAt.of_pow (n:ℕ) (x₀:ℝ) : HasDerivWithinAt (fun x ↦ x^n)
+(n * x₀^((n:ℤ)-1)) .univ x₀ := by
+  sorry
+--------------------------------------------------------------------------------
+139
+--------------------------------------------------------------------------------
+theorem of_lipschitz {f : ℝ → ℝ}
+  (hcont : ContinuousOn f (.univ))
+  (hderiv : DifferentiableOn ℝ f (.univ))
+  (hlip : BddOn (deriv f) .univ) :
+  UniformContinuousOn f (.univ) := by
+  sorry
+----------------------------------------
+
+theorem _root_.UniformContinuousOn.of_lipschitz {f:ℝ → ℝ}
+  (hcont: ContinuousOn f .univ)
+  (hderiv: DifferentiableOn ℝ f .univ)
+  (hlip: BddOn (deriv f) .univ) :
+  UniformContinuousOn f (.univ) := by
+  sorry
+--------------------------------------------------------------------------------
+140
+--------------------------------------------------------------------------------
+theorem lipschitz_bound {M a b : ℝ} (hM : M > 0) (hab : a < b) {f : ℝ → ℝ}
+  (hcont : ContinuousOn f (Set.Icc a b))
+  (hderiv : DifferentiableOn ℝ f (Set.Ioo a b))
+  (hlip : ∀ x ∈ Set.Ioo a b, |derivWithin f (Set.Ioo a b) x| ≤ M)
+  {x y : ℝ} (hx : x ∈ Set.Ioo a b) (hy : y ∈ Set.Ioo a b) :
+  |f x - f y| ≤ M * |x - y| := by
+  sorry
+----------------------------------------
+
+theorem lipschitz_bound {M a b:ℝ} (hM: M > 0) (hab: a < b) {f:ℝ → ℝ}
+  (hcont: ContinuousOn f (.Icc a b))
+  (hderiv: DifferentiableOn ℝ f (.Ioo a b))
+  (hlip: ∀ x ∈ Set.Ioo a b, |derivWithin f (.Ioo a b) x| ≤ M)
+  {x y:ℝ} (hx: x ∈ Set.Ioo a b) (hy: y ∈ Set.Ioo a b) :
+  |f x - f y| ≤ M * |x - y| := by
+  sorry
+--------------------------------------------------------------------------------
+148
+--------------------------------------------------------------------------------
+
+----------------------------------------
+
+theorem RS_integ_of_uniform_cts {I: BoundedInterval} {f:ℝ → ℝ} (hf: UniformContinuousOn f I)
+ {α:ℝ → ℝ} (hα: Monotone α):
+  RS_IntegrableOn f I α := by
+  sorry
+--------------------------------------------------------------------------------
+Missing 17 theorems
+
+theorem SetTheory.Set.not_mem_self (A:Set) : (A:Object) ∉ A := by sorry
+--------------------------------------------------------------------------------
+
+theorem SetTheory.Set.preimage_image_of_inj {X Y:Set} (f:X → Y) :
+    (∀ S, S ⊆ X → preimage f (image f S) = S) ↔ Function.Injective f := by sorry
+--------------------------------------------------------------------------------
+
+theorem SetTheory.Set.prod_inter (A B C:Set) : A ×ˢ (B ∩ C) = (A ×ˢ B) ∩ (A ×ˢ C) := by sorry
+--------------------------------------------------------------------------------
+
+theorem SetTheory.Set.pigeonhole_principle {n:ℕ} {A: Fin n → Set}
+  (hA: ∀ i, (A i).finite) (hAcard: (iUnion _ A).card > n) : ∃ i, (A i).card ≥ 2 := by sorry
+--------------------------------------------------------------------------------
+
+theorem Real.min_mul (x y :Real) {z:Real} (hz: z.IsPos) : min (x * z) (y * z) = min x y * z := by
+  sorry
+--------------------------------------------------------------------------------
+
+theorem Real.floor_exist (x:Real) : ∃ n:ℤ, (n:Real) ≤ x ∧ x < (n:Real)+1 := by sorry
+--------------------------------------------------------------------------------
+
+theorem Real.max_ratPow {x y:Real} (hx: x > 0) (hy: y > 0) {q:ℚ} (hq: q > 0) :
+  max (x^q) y^q = (max x y)^q := by
+  sorry
+--------------------------------------------------------------------------------
+
+theorem lim_of_exp' {x:ℝ} (hbound: x > 1) : ¬((fun (n:ℕ) ↦ x^n):Sequence).Convergent := by sorry
+--------------------------------------------------------------------------------
+
+theorem Sequence.extended_limit_point_of_liminf (a:Sequence) : a.ExtendedLimitPoint a.liminf := by sorry
+--------------------------------------------------------------------------------
+
+theorem Series.example_7_2_7 : ((fun n:ℕ ↦ (1:ℝ)):Series).diverges := by
+  apply diverges_of_nodecay
+  sorry
+--------------------------------------------------------------------------------
+
+theorem N_unbounded (a: ℝ) : ¬ Bornology.IsBounded ((fun n:ℕ ↦ (n:ℝ)) '' .univ) := by sorry
+--------------------------------------------------------------------------------
+
+theorem exists_fixed_pt {f:ℝ → ℝ} (hf: ContinuousOn f (.Icc 0 1)) (hmap: f '' .Icc 0 1 ⊆ .Icc 0 1) : ∃ x ∈ Set.Icc 0 1, f x = x := by
+  sorry
+--------------------------------------------------------------------------------
+
+theorem mono_of_continuous_inj {a b:ℝ} (h: a < b) {f:ℝ → ℝ}
+  (hf: ContinuousOn f (.Icc a b))
+  (hinj: Function.Injective (fun x: Set.Icc a b ↦ f x )) :
+  StrictMonoOn f (.Icc a b) ∨ StrictAntiOn f (.Icc a b) := by
+  sorry
+--------------------------------------------------------------------------------
+
+theorem _root_.HasDerivWithinAt.of_pow (n:ℕ) (x₀:ℝ) : HasDerivWithinAt (fun x ↦ x^n)
+(n * x₀^((n:ℤ)-1)) .univ x₀ := by
+  sorry
+--------------------------------------------------------------------------------
+
+theorem _root_.UniformContinuousOn.of_lipschitz {f:ℝ → ℝ}
+  (hcont: ContinuousOn f .univ)
+  (hderiv: DifferentiableOn ℝ f .univ)
+  (hlip: BddOn (deriv f) .univ) :
+  UniformContinuousOn f (.univ) := by
+  sorry
+--------------------------------------------------------------------------------
+
+theorem lipschitz_bound {M a b:ℝ} (hM: M > 0) (hab: a < b) {f:ℝ → ℝ}
+  (hcont: ContinuousOn f (.Icc a b))
+  (hderiv: DifferentiableOn ℝ f (.Ioo a b))
+  (hlip: ∀ x ∈ Set.Ioo a b, |derivWithin f (.Ioo a b) x| ≤ M)
+  {x y:ℝ} (hx: x ∈ Set.Ioo a b) (hy: y ∈ Set.Ioo a b) :
+  |f x - f y| ≤ M * |x - y| := by
+  sorry
+--------------------------------------------------------------------------------
+
+theorem RS_integ_of_uniform_cts {I: BoundedInterval} {f:ℝ → ℝ} (hf: UniformContinuousOn f I)
+ {α:ℝ → ℝ} (hα: Monotone α):
+  RS_IntegrableOn f I α := by
+  sorry
+--------------------------------------------------------------------------------

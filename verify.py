@@ -21,6 +21,8 @@ import shutil
 from pathlib import Path
 import subprocess
 from typing import List, Dict, Any
+import time
+import math
 
 LAKE_PROJECT = Path("/Users/alextaylor/Desktop/lean_prover/analysis/analysis")
 
@@ -107,7 +109,8 @@ def main():
     results: List[Dict[str, Any]] = []
 
     # We can reuse one temp dir for speed unless --keep-tmp
-    base_tmp = tempfile.mkdtemp(prefix="lean_compile_", dir=str(LAKE_PROJECT))
+    time_prefix = math.floor(time.time())
+    base_tmp = tempfile.mkdtemp(prefix=f"lean_compile_{time_prefix}_", dir=str(LAKE_PROJECT))
     base_tmp_path = Path(base_tmp)
 
     try:
